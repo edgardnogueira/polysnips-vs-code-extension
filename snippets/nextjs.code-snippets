@@ -1,0 +1,98 @@
+{
+  // Exemplo de criação de um componente básico de página
+  "NextPage Template": {
+    "prefix": "nextpage",
+    "body": [
+      "import React from 'react';",
+      "",
+      "export default function $1() {",
+      "  return (",
+      "    <div>",
+      "      <h1>$2</h1>",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "Cria um componente React básico para uma página Next.js"
+  },
+
+  // getStaticProps
+  "getStaticProps": {
+    "prefix": "gsp",
+    "body": [
+      "export async function getStaticProps() {",
+      "  // Você pode buscar dados aqui, por exemplo:",
+      "  // const res = await fetch('https://api.example.com/data');",
+      "  // const data = await res.json();",
+      "",
+      "  return {",
+      "    props: {",
+      "      // Propriedades para o componente usar",
+      "    },",
+      "    revalidate: 60 // Revalida a cada 60 segundos (opcional)",
+      "  };",
+      "}"
+    ],
+    "description": "Função getStaticProps para geração estática de páginas Next.js"
+  },
+
+  // getStaticPaths
+  "getStaticPaths": {
+    "prefix": "gspaths",
+    "body": [
+      "export async function getStaticPaths() {",
+      "  // Exemplo de paths fixos, ou gerados dinamicamente via API",
+      "  const paths = [{ params: { id: '1' } }, { params: { id: '2' } }];",
+      "",
+      "  return {",
+      "    paths,",
+      "    fallback: false",
+      "  };",
+      "}"
+    ],
+    "description": "Função getStaticPaths para gerar rotas estáticas dinâmicas"
+  },
+
+  // getServerSideProps
+  "getServerSideProps": {
+    "prefix": "gssp",
+    "body": [
+      "export async function getServerSideProps(context) {",
+      "  // Você pode buscar dados diretamente no servidor aqui",
+      "  // const res = await fetch('https://api.example.com/data');",
+      "  // const data = await res.json();",
+      "",
+      "  return {",
+      "    props: {",
+      "      // Propriedades para o componente usar",
+      "    }",
+      "  };",
+      "}"
+    ],
+    "description": "Função getServerSideProps para geração de páginas em tempo real"
+  },
+
+  // API route
+  "API Route": {
+    "prefix": "api",
+    "body": [
+      "export default function handler(req, res) {",
+      "  const { method } = req;",
+      "  switch (method) {",
+      "    case 'GET':",
+      "      // Lógica para GET",
+      "      res.status(200).json({ message: 'GET example' });",
+      "      break;",
+      "    case 'POST':",
+      "      // Lógica para POST",
+      "      res.status(200).json({ message: 'POST example' });",
+      "      break;",
+      "    default:",
+      "      res.setHeader('Allow', ['GET', 'POST']);",
+      "      res.status(405).end(`Método ${method} não permitido`);",
+      "  }",
+      "}"
+    ],
+    "description": "Cria uma rota de API no Next.js"
+  }
+}
