@@ -1,0 +1,79 @@
+{
+  // Snippet 1: Arquivo main com função principal
+  "Go Main Function": {
+    "prefix": "edg-main",
+    "body": [
+      "package main",
+      "",
+      "import (",
+      "  \"fmt\"",
+      ")",
+      "",
+      "func main() {",
+      "  fmt.Println(\"Hello, World!\")",
+      "}"
+    ],
+    "description": "Cria um arquivo main com função principal e um print simples"
+  },
+
+  // Snippet 2: Teste básico com a biblioteca 'testing'
+  "Go Testing Function": {
+    "prefix": "edg-test",
+    "body": [
+      "package $1",
+      "",
+      "import (",
+      "  \"testing\"",
+      ")",
+      "",
+      "func Test$2(t *testing.T) {",
+      "  t.Run(\"$3\", func(t *testing.T) {",
+      "    // Escreva seus testes aqui",
+      "    $4",
+      "  })",
+      "}"
+    ],
+    "description": "Estrutura básica para escrever testes em Go"
+  },
+
+  // Snippet 3: Declaração de struct
+  "Go Struct": {
+    "prefix": "edg-struct",
+    "body": [
+      "type $1 struct {",
+      "  $2 string",
+      "  $3 int",
+      "  // Adicione mais campos conforme necessário",
+      "}"
+    ],
+    "description": "Cria uma struct Go com campos de exemplo"
+  },
+
+  // Snippet 4: Método de struct
+  "Go Struct Method": {
+    "prefix": "edg-method",
+    "body": [
+      "func (s *$1) $2() $3 {",
+      "  // Implementação do método",
+      "  return $4",
+      "}"
+    ],
+    "description": "Adiciona um método a um struct"
+  },
+
+  // Snippet 5: Inicialização de slice e loop
+  "Go Slice & Range": {
+    "prefix": "edg-range",
+    "body": [
+      "$1 := []$2{",
+      "  $3",
+      "}",
+      "",
+      "for i, v := range $1 {",
+      "  // Use i e v",
+      "  $4",
+      "}"
+    ],
+    "description": "Cria um slice e itera sobre ele usando for range"
+  }
+}

@@ -2,7 +2,7 @@
   "name": "my-vscode-snippets",
   "displayName": "My vscode snippets",
   "description": "Snippets",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -13,6 +13,10 @@
   "main": "./dist/extension.js",
   "contributes": {
     "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.code-snippets"
+      },
       {
         "language": "javascript",
         "path": "./snippets/nextjs.code-snippets"
@@ -28,6 +32,14 @@
       {
         "language": "javascriptreact",
         "path": "./snippets/nextjs.code-snippets"
+      },
+      {
+        "language": "go",
+        "path": "./snippets/golang.code-snippets"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/php.code-snippets"
       }
     ]
   },

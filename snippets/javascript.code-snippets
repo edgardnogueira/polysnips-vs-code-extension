@@ -1,0 +1,99 @@
+{
+  // -------------------------------------------
+  // MANIPULAÇÃO DE ARRAYS
+  // -------------------------------------------
+
+  "Map Array (edg-map)": {
+    "prefix": "edg-map",
+    "body": [
+      "const newArray = $1array.map(($2item, $3index) => {",
+      "  return $4 // resultado para cada item",
+      "});"
+    ],
+    "description": "Cria um novo array mapeando cada item do array original"
+  },
+
+  "Filter Array (edg-filter)": {
+    "prefix": "edg-filter",
+    "body": [
+      "const filtered = $1array.filter(($2item, $3index) => {",
+      "  return $4 // condição para manter o item",
+      "});"
+    ],
+    "description": "Filtra o array de acordo com a condição especificada"
+  },
+
+  "Reduce Array (edg-reduce)": {
+    "prefix": "edg-reduce",
+    "body": [
+      "const result = $1array.reduce(($2acc, $3item, $4index) => {",
+      "  return $5 // retorna o acumulador atualizado",
+      "}, $6initialValue);"
+    ],
+    "description": "Reduz o array a um valor único usando função acumuladora"
+  },
+
+  "Find Array (edg-find)": {
+    "prefix": "edg-find",
+    "body": [
+      "const found = $1array.find(($2item) => {",
+      "  return $3 // condição de busca",
+      "});"
+    ],
+    "description": "Retorna o primeiro item do array que satisfaz a condição"
+  },
+
+  "ForEach Array (edg-foreach)": {
+    "prefix": "edg-foreach",
+    "body": [
+      "$1array.forEach(($2item, $3index) => {",
+      "  $4 // ação para cada item",
+      "});"
+    ],
+    "description": "Executa uma função para cada item do array"
+  },
+
+  // -------------------------------------------
+  // MANIPULAÇÃO DE OBJETOS
+  // -------------------------------------------
+
+  "Merge Objects (edg-merge-obj)": {
+    "prefix": "edg-merge-obj",
+    "body": [
+      "const merged = {",
+      "  ...$1obj1,",
+      "  ...$2obj2,",
+      "  $3// propriedades adicionais (opcional)",
+      "};"
+    ],
+    "description": "Faz merge de dois (ou mais) objetos com o operador spread"
+  },
+
+  "Destructure Object (edg-dest-obj)": {
+    "prefix": "edg-dest-obj",
+    "body": ["const { $1prop1, $2prop2 } = $3obj;"],
+    "description": "Exemplo de destruturação de objeto"
+  },
+
+  "Object.entries() (edg-entries)": {
+    "prefix": "edg-entries",
+    "body": [
+      "Object.entries($1obj).forEach(([key, value]) => {",
+      "  $2 // utilize key e value",
+      "});"
+    ],
+    "description": "Percorre todas as [chave, valor] do objeto"
+  },
+
+  "Object.keys() (edg-keys)": {
+    "prefix": "edg-keys",
+    "body": ["const keys = Object.keys($1obj);"],
+    "description": "Pega todas as chaves do objeto em um array"
+  },
+
+  "Object.values() (edg-values)": {
+    "prefix": "edg-values",
+    "body": ["const values = Object.values($1obj);"],
+    "description": "Retorna todos os valores do objeto em um array"
+  }
+}

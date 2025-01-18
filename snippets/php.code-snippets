@@ -1,0 +1,79 @@
+{
+  // Snippet 1: Estrutura PHP básica
+  "PHP Basic Structure": {
+    "prefix": "edg-php-basic",
+    "body": ["<?php", "", "$1 // seu código aqui", "", "?>"],
+    "description": "Estrutura básica de um arquivo PHP"
+  },
+
+  // Snippet 2: Echo
+  "PHP Echo": {
+    "prefix": "edg-echo",
+    "body": ["<?php", "echo \"$1\";", "?>"],
+    "description": "Exibe texto na tela usando echo"
+  },
+
+  // Snippet 3: Função PHP
+  "PHP Function": {
+    "prefix": "edg-func",
+    "body": [
+      "<?php",
+      "function $1($2) {",
+      "    $3 // corpo da função",
+      "}",
+      "?>"
+    ],
+    "description": "Cria uma função simples em PHP"
+  },
+
+  // Snippet 4: Classe PHP
+  "PHP Class": {
+    "prefix": "edg-class",
+    "body": [
+      "<?php",
+      "class $1",
+      "{",
+      "    private $2;",
+      "",
+      "    public function __construct($2)",
+      "    {",
+      "        $this->$2 = $2;",
+      "    }",
+      "",
+      "    public function $3()",
+      "    {",
+      "        $4 // método de exemplo",
+      "    }",
+      "}",
+      "?>"
+    ],
+    "description": "Estrutura básica de uma classe em PHP"
+  },
+
+  // Snippet 5: Array PHP
+  "PHP Array": {
+    "prefix": "edg-array",
+    "body": [
+      "<?php",
+      "$1 = array(",
+      "    \"$2\" => \"$3\",",
+      "    \"$4\" => \"$5\"",
+      ");",
+      "?>"
+    ],
+    "description": "Exemplo de array em PHP"
+  },
+
+  // Snippet 6: Foreach
+  "PHP Foreach": {
+    "prefix": "edg-foreach",
+    "body": [
+      "<?php",
+      "foreach($1 as $2 => $3) {",
+      "    $4 // iteração",
+      "}",
+      "?>"
+    ],
+    "description": "Estrutura de loop foreach em PHP"
+  }
+}
