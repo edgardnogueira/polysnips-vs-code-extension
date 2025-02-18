@@ -1,146 +1,219 @@
 # FullStack VSCode Snippets
 
-A comprehensive collection of code snippets for full-stack development, including JavaScript, Next.js, Go, PHP, and Docker.
+Uma coleção abrangente de snippets para desenvolvimento full-stack, incluindo JavaScript, Next.js, Go, PHP, Docker e mais.
 
-## Features
+## Características
 
-- JavaScript/TypeScript snippets for array manipulation and object handling
-- Next.js specific snippets for pages, API routes, and data fetching
-- Go snippets for common structures and patterns
-- PHP snippets for basic operations and OOP
-- Docker snippets for Dockerfile and docker-compose configurations
+- JavaScript/TypeScript snippets para manipulação de arrays e objetos
+- Next.js snippets para páginas, rotas API e data fetching
+- Go snippets para estruturas comuns, GORM, repositories e services
+- Testes em Go com suporte a unit tests, integration tests e mocks
+- PHP snippets para operações básicas e OOP
+- Docker snippets para Dockerfile e docker-compose
+- SQL snippets para queries comuns
 
-## Installation
+## Instalação
 
-You can install this extension in several ways:
+Você pode instalar esta extensão de várias formas:
 
-### From VS Code Marketplace
+### Via VS Code Marketplace
 
-1. Open VS Code
-2. Go to Extensions (Ctrl+Shift+X)
-3. Search for "FullStack vscode snippets"
-4. Click Install
+1. Abra o VS Code
+2. Vá para Extensions (Ctrl+Shift+X)
+3. Procure por "FullStack vscode snippets"
+4. Clique em Install
 
-### From VSIX File
+### Via arquivo VSIX
 
 ```bash
-# Package the extension
+# Empacota a extensão
 npm run package-extension
 
-# Install the extension
+# Instala a extensão
 npm run install-extension fullstack-snippets-0.0.6.vsix
 ```
 
-## Available Snippets
+## Snippets Disponíveis
 
 ### JavaScript/TypeScript
 
-| Prefix            | Description                    |
-| ----------------- | ------------------------------ |
-| `fs-js-map`       | Create a new array using map   |
-| `fs-js-filter`    | Filter array elements          |
-| `fs-js-reduce`    | Reduce array to a single value |
-| `fs-js-find`      | Find an element in array       |
-| `fs-js-foreach`   | Iterate over array elements    |
-| `fs-js-merge-obj` | Merge objects using spread     |
-| `fs-js-dest-obj`  | Object destructuring           |
+| Prefixo           | Descrição                       |
+| ----------------- | ------------------------------- |
+| `fs-js-map`       | Cria um novo array usando map   |
+| `fs-js-filter`    | Filtra elementos do array       |
+| `fs-js-reduce`    | Reduz array para um único valor |
+| `fs-js-find`      | Encontra um elemento no array   |
+| `fs-js-foreach`   | Itera sobre elementos do array  |
+| `fs-js-merge-obj` | Mescla objetos usando spread    |
+| `fs-js-dest-obj`  | Desestruturação de objeto       |
 
-### Next.js
+### Go - Básico
 
-| Prefix             | Description                     |
-| ------------------ | ------------------------------- |
-| `fs-next-nextpage` | Create a Next.js page component |
-| `fs-next-gsp`      | Add getStaticProps function     |
-| `fs-next-gspaths`  | Add getStaticPaths function     |
-| `fs-next-gssp`     | Add getServerSideProps function |
-| `fs-next-api`      | Create an API route             |
-
-### Go
-
-| Prefix            | Description                 |
+| Prefixo           | Descrição                   |
 | ----------------- | --------------------------- |
-| `fs-go-main`      | Create main function        |
-| `fs-go-test`      | Create test function        |
-| `fs-go-struct`    | Create a struct             |
-| `fs-go-method`    | Add a method to struct      |
-| `fs-go-interface` | Create an interface         |
-| `fs-go-range`     | Create slice and range loop |
+| `fs-go-main`      | Cria função main            |
+| `fs-go-test`      | Cria função de teste        |
+| `fs-go-struct`    | Cria uma struct             |
+| `fs-go-method`    | Adiciona um método a struct |
+| `fs-go-interface` | Cria uma interface          |
+| `fs-go-range`     | Cria slice e loop range     |
+
+### Go - GORM & Database
+
+| Prefixo                           | Descrição                     |
+| --------------------------------- | ----------------------------- |
+| `fs-go-gorm-model`                | Cria model do GORM            |
+| `fs-go-gorm-connect`              | Configuração de conexão       |
+| `fs-go-gorm-repository`           | Cria repository completo      |
+| `fs-go-gorm-repository-interface` | Cria interface do repository  |
+| `fs-go-gorm-service-interface`    | Cria interface do service     |
+| `fs-go-gorm-service-impl`         | Cria implementação do service |
+| `fs-go-gorm-find`                 | Busca registros               |
+| `fs-go-gorm-complex`              | Query complexa                |
+| `fs-go-gorm-join`                 | Query com JOIN                |
+
+### Go - Testes
+
+| Prefixo                        | Descrição                         |
+| ------------------------------ | --------------------------------- |
+| `fs-go-test-basic`             | Teste básico (Arrange-Act-Assert) |
+| `fs-go-test-table`             | Teste table-driven                |
+| `fs-go-test-repository`        | Testes para repository            |
+| `fs-go-test-service`           | Testes para service com mocks     |
+| `fs-go-test-mock-setup`        | Setup para testes com mock        |
+| `fs-go-test-integration-setup` | Setup para testes de integração   |
+| `fs-go-test-benchmark`         | Teste de benchmark                |
+| `fs-go-test-http`              | Teste para HTTP handler           |
 
 ### PHP
 
-| Prefix             | Description         |
-| ------------------ | ------------------- |
-| `fs-php-php-basic` | Basic PHP structure |
-| `fs-php-echo`      | Echo statement      |
-| `fs-php-func`      | Create function     |
-| `fs-php-class`     | Create class        |
-| `fs-php-array`     | Create array        |
-| `fs-php-foreach`   | Foreach loop        |
+| Prefixo            | Descrição            |
+| ------------------ | -------------------- |
+| `fs-php-php-basic` | Estrutura PHP básica |
+| `fs-php-echo`      | Echo statement       |
+| `fs-php-func`      | Cria função          |
+| `fs-php-class`     | Cria classe          |
+| `fs-php-array`     | Cria array           |
+| `fs-php-foreach`   | Loop foreach         |
 
 ### Docker
 
-| Prefix                  | Description                  |
-| ----------------------- | ---------------------------- |
-| `fs-docker-basic`       | Basic Dockerfile             |
-| `fs-docker-compose`     | Docker Compose configuration |
-| `fs-docker-multistage`  | Multi-stage Dockerfile       |
-| `fs-docker-volume`      | Docker volume configuration  |
-| `fs-docker-network`     | Docker network configuration |
-| `fs-docker-healthcheck` | Docker healthcheck           |
+| Prefixo                 | Descrição                   |
+| ----------------------- | --------------------------- |
+| `fs-docker-basic`       | Dockerfile básico           |
+| `fs-docker-compose`     | Configuração docker-compose |
+| `fs-docker-multistage`  | Dockerfile multi-stage      |
+| `fs-docker-volume`      | Configuração de volume      |
+| `fs-docker-network`     | Configuração de rede        |
+| `fs-docker-healthcheck` | Healthcheck do Docker       |
 
-## Usage Example
+### SQL
 
-1. Open a file with the appropriate extension (.js, .go, .php, Dockerfile, etc.)
-2. Type the snippet prefix (e.g., `fs-js-map`)
-3. Press `Tab` to trigger the snippet
-4. Fill in the placeholders by typing and using `Tab` to move between them
+| Prefixo         | Descrição           |
+| --------------- | ------------------- |
+| `fs-sql-select` | Query SELECT        |
+| `fs-sql-insert` | Query INSERT        |
+| `fs-sql-update` | Query UPDATE        |
+| `fs-sql-delete` | Query DELETE        |
+| `fs-sql-join`   | Query com JOIN      |
+| `fs-sql-group`  | GROUP BY com HAVING |
 
-Example with JavaScript map:
+## Exemplos de Uso
 
-```javascript
-// Type fs-js-map and press Tab
-const newArray = array.map((item, index) => {
-  return; // resultado para cada item
-});
+### Go GORM Repository e Service
+
+```go
+// 1. Crie a interface do repository
+// Digite: fs-go-gorm-repository-interface
+type UserRepository interface {
+    Create(user *User) error
+    // ...
+}
+
+// 2. Crie a interface do service
+// Digite: fs-go-gorm-service-interface
+type UserService interface {
+    Create(ctx context.Context, user *User) error
+    // ...
+}
+
+// 3. Crie a implementação do repository
+// Digite: fs-go-gorm-repository
+type UserRepository struct {
+    db *gorm.DB
+}
+// ...
+
+// 4. Crie a implementação do service
+// Digite: fs-go-gorm-service-impl
+type UserServiceImpl struct {
+    repo UserRepository
+}
+// ...
+
+// 5. Crie os testes
+// Digite: fs-go-test-service
+func TestUserService(t *testing.T) {
+    // ...
+}
 ```
 
-## Development
+### Docker Compose com Healthcheck
+
+```dockerfile
+# Digite: fs-docker-compose
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+```
+
+## Desenvolvimento
 
 ```bash
-# Install dependencies
+# Instala dependências
 npm install
 
-# Compile
+# Compila
 npm run compile
 
-# Watch mode
+# Modo watch
 npm run watch
 
-# Run tests
+# Executa testes
 npm run test
 
-# Package extension
+# Empacota extensão
 npm run package-extension
 ```
 
-## Contributing
+## Contribuindo
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contribuições são bem-vindas! Por favor, sinta-se à vontade para submeter um Pull Request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork o repositório
+2. Crie sua branch de feature (`git checkout -b feature/NovaFeature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/NovaFeature`)
+5. Abra um Pull Request
 
-## License
+## Licença
 
-This project is licensed under the MIT License - see the LICENSE file for details
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
 
-## Release Notes
+## Notas de Release
 
 ### 0.0.6
 
-- Added Docker snippets
-- Updated snippets organization
-- Improved documentation
+- Adicionado snippets de testes para Go
+- Adicionado suporte a GORM com repository/service pattern
+- Adicionado snippets Docker e SQL
+- Melhorada a organização por categorias
+- Melhorada a documentação
