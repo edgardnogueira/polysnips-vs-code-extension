@@ -2,7 +2,7 @@
   "name": "fullstack-snippets",
   "displayName": "FullStack vscode snippets",
   "description": "Snippets para desenvolvimento fullstack incluindo JavaScript, TypeScript, Go, PHP, Docker e mais",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "publisher": "my-publisher-id",
   "repository": {
     "type": "git",
@@ -64,6 +64,10 @@
       {
         "language": "go",
         "path": "./snippets/golang-tests.code-snippets"
+      },
+      {
+        "language": "go",
+        "path": "./snippets/go-wire.code-snippets"
       },
       {
         "language": "php",
