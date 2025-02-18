@@ -94,5 +94,323 @@
       "}"
     ],
     "description": "Cria uma rota de API no Next.js"
+  },
+  // Server Component
+  "Next Server Component": {
+    "prefix": "fs-next-server",
+    "body": [
+      "import { Suspense } from 'react'",
+      "",
+      "async function ${1:ComponentName}() {",
+      "  const data = await fetch('${2:api_url}', {",
+      "    next: { revalidate: ${3:60} }",
+      "  })",
+      "  const json = await data.json()",
+      "",
+      "  return (",
+      "    <Suspense fallback={<div>Loading...</div>}>",
+      "      <div>",
+      "        ${4:// Renderize seus dados aqui}",
+      "      </div>",
+      "    </Suspense>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:ComponentName}"
+    ],
+    "description": "Cria um Server Component com fetch e Suspense"
+  },
+
+  // Client Component
+  "Next Client Component": {
+    "prefix": "fs-next-client",
+    "body": [
+      "'use client'",
+      "",
+      "import { useState, useEffect } from 'react'",
+      "",
+      "export default function ${1:ComponentName}() {",
+      "  const [data, setData] = useState<${2:any}>(null)",
+      "  const [loading, setLoading] = useState(true)",
+      "",
+      "  useEffect(() => {",
+      "    async function fetchData() {",
+      "      try {",
+      "        const response = await fetch('${3:api_url}')",
+      "        const json = await response.json()",
+      "        setData(json)",
+      "      } catch (error) {",
+      "        console.error('Error:', error)",
+      "      } finally {",
+      "        setLoading(false)",
+      "      }",
+      "    }",
+      "",
+      "    fetchData()",
+      "  }, [])",
+      "",
+      "  if (loading) return <div>Loading...</div>",
+      "",
+      "  return (",
+      "    <div>",
+      "      ${4:// Renderize seus dados aqui}",
+      "    </div>",
+      "  )",
+      "}"
+    ],
+    "description": "Cria um Client Component com fetch e estado"
+  },
+
+  // Page with Layout
+  "Next Page with Layout": {
+    "prefix": "fs-next-page-layout",
+    "body": [
+      "import { Metadata } from 'next'",
+      "",
+      "export const metadata: Metadata = {",
+      "  title: '${1:Page Title}',",
+      "  description: '${2:Page Description}'",
+      "}",
+      "",
+      "export default function ${3:PageName}({",
+      "  children",
+      "}: {",
+      "  children: React.ReactNode",
+      "}) {",
+      "  return (",
+      "    <div>",
+      "      <header>",
+      "        ${4:// Header content}",
+      "      </header>",
+      "      <main>",
+      "        {children}",
+      "      </main>",
+      "      <footer>",
+      "        ${5:// Footer content}",
+      "      </footer>",
+      "    </div>",
+      "  )",
+      "}"
+    ],
+    "description": "Cria uma página com layout e metadata"
+  },
+
+  // Route Handler (API)
+  "Next Route Handler": {
+    "prefix": "fs-next-route",
+    "body": [
+      "import { NextResponse } from 'next/server'",
+      "import type { NextRequest } from 'next/server'",
+      "",
+      "export async function GET(request: NextRequest) {",
+      "  try {",
+      "    ${1:// Lógica do handler}",
+      "    return NextResponse.json({ message: 'Success' })",
+      "  } catch (error) {",
+      "    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })",
+      "  }",
+      "}",
+      "",
+      "export async function POST(request: NextRequest) {",
+      "  try {",
+      "    const body = await request.json()",
+      "    ${2:// Processa o body}",
+      "    return NextResponse.json({ message: 'Created' }, { status: 201 })",
+      "  } catch (error) {",
+      "    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })",
+      "  }",
+      "}"
+    ],
+    "description": "Cria um route handler com GET e POST"
+  },
+
+  // Loading Component
+  "Next Loading": {
+    "prefix": "fs-next-loading",
+    "body": [
+      "export default function Loading() {",
+      "  return (",
+      "    <div className=\"flex items-center justify-center min-h-screen\">",
+      "      <div className=\"animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900\"></div>",
+      "    </div>",
+      "  )",
+      "}"
+    ],
+    "description": "Cria um componente de loading"
+  },
+
+  // Error Component
+  "Next Error": {
+    "prefix": "fs-next-error",
+    "body": [
+      "'use client'",
+      "",
+      "export default function Error({",
+      "  error,",
+      "  reset",
+      "}: {",
+      "  error: Error & { digest?: string }",
+      "  reset: () => void",
+      "}) {",
+      "  return (",
+      "    <div className=\"flex flex-col items-center justify-center min-h-screen\">",
+      "      <h2 className=\"text-2xl font-bold mb-4\">Something went wrong!</h2>",
+      "      <button",
+      "        onClick={() => reset()}",
+      "        className=\"px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600\"",
+      "      >",
+      "        Try again",
+      "      </button>",
+      "    </div>",
+      "  )",
+      "}"
+    ],
+    "description": "Cria um componente de error"
+  },
+
+  // Form with Server Action
+  "Next Form Action": {
+    "prefix": "fs-next-form-action",
+    "body": [
+      "'use server'",
+      "",
+      "import { z } from 'zod'",
+      "",
+      "const schema = z.object({",
+      "  ${1:field}: z.string().min(1, 'Campo obrigatório')",
+      "})",
+      "",
+      "export async function ${2:formAction}(formData: FormData) {",
+      "  const data = {",
+      "    ${1:field}: formData.get('${1:field}')?.toString()",
+      "  }",
+      "",
+      "  const result = schema.safeParse(data)",
+      "  if (!result.success) {",
+      "    return { error: result.error.format() }",
+      "  }",
+      "",
+      "  try {",
+      "    ${3:// Processa os dados}",
+      "    return { success: true }",
+      "  } catch (error) {",
+      "    return { error: 'Failed to process form' }",
+      "  }",
+      "}"
+    ],
+    "description": "Cria uma server action para form"
+  },
+
+  // Form Component with Client Validation
+  "Next Form Component": {
+    "prefix": "fs-next-form",
+    "body": [
+      "'use client'",
+      "",
+      "import { useTransition } from 'react'",
+      "import { ${2:formAction} } from './actions'",
+      "",
+      "export default function ${1:FormName}() {",
+      "  const [isPending, startTransition] = useTransition()",
+      "",
+      "  async function onSubmit(formData: FormData) {",
+      "    startTransition(async () => {",
+      "      const result = await ${2:formAction}(formData)",
+      "      if (result.error) {",
+      "        // Handle error",
+      "      }",
+      "    })",
+      "  }",
+      "",
+      "  return (",
+      "    <form action={onSubmit}>",
+      "      <input",
+      "        type=\"text\"",
+      "        name=\"${3:field}\"",
+      "        className=\"border p-2 rounded\"",
+      "      />",
+      "      <button",
+      "        type=\"submit\"",
+      "        disabled={isPending}",
+      "        className=\"bg-blue-500 text-white px-4 py-2 rounded\"",
+      "      >",
+      "        {isPending ? 'Submitting...' : 'Submit'}",
+      "      </button>",
+      "    </form>",
+      "  )",
+      "}"
+    ],
+    "description": "Cria um form component com validação client-side"
+  },
+
+  // Data Fetching Utils
+  "Next Fetch Utils": {
+    "prefix": "fs-next-fetch-utils",
+    "body": [
+      "type FetchError = {",
+      "  message: string",
+      "  status: number",
+      "}",
+      "",
+      "export async function fetchData<T>(",
+      "  url: string,",
+      "  options: RequestInit = {},",
+      "): Promise<T> {",
+      "  const defaultOptions: RequestInit = {",
+      "    next: { revalidate: 3600 },",
+      "    ...options,",
+      "  }",
+      "",
+      "  try {",
+      "    const response = await fetch(url, defaultOptions)",
+      "    ",
+      "    if (!response.ok) {",
+      "      throw new Error(`HTTP error! status: ${response.status}`)",
+      "    }",
+      "",
+      "    return response.json()",
+      "  } catch (error) {",
+      "    const fetchError: FetchError = {",
+      "      message: error instanceof Error ? error.message : 'Unknown error',",
+      "      status: 500,",
+      "    }",
+      "    throw fetchError",
+      "  }",
+      "}"
+    ],
+    "description": "Cria utilitários para fetch com TypeScript"
+  },
+
+  // Middleware
+  "Next Middleware": {
+    "prefix": "fs-next-middleware",
+    "body": [
+      "import { NextResponse } from 'next/server'",
+      "import type { NextRequest } from 'next/server'",
+      "",
+      "export function middleware(request: NextRequest) {",
+      "  const pathname = request.nextUrl.pathname",
+      "",
+      "  // Exemplo de redirecionamento",
+      "  if (pathname.startsWith('/old-path')) {",
+      "    return NextResponse.redirect(new URL('/new-path', request.url))",
+      "  }",
+      "",
+      "  // Exemplo de proteção de rota",
+      "  if (pathname.startsWith('/protected')) {",
+      "    const token = request.cookies.get('token')",
+      "    if (!token) {",
+      "      return NextResponse.redirect(new URL('/login', request.url))",
+      "    }",
+      "  }",
+      "",
+      "  return NextResponse.next()",
+      "}",
+      "",
+      "export const config = {",
+      "  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']",
+      "}"
+    ],
+    "description": "Cria um middleware com exemplos de uso"
   }
 }

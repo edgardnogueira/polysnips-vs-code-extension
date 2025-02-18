@@ -2,7 +2,7 @@
   "name": "fullstack-snippets",
   "displayName": "FullStack vscode snippets",
   "description": "Snippets para desenvolvimento fullstack incluindo JavaScript, TypeScript, Go, PHP, Docker e mais",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "publisher": "my-publisher-id",
   "repository": {
     "type": "git",
