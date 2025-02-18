@@ -1,0 +1,138 @@
+{
+  // Dockerfile básico
+  "Basic Dockerfile": {
+    "prefix": "fs-docker-basic",
+    "body": [
+      "FROM ${1:node:latest}",
+      "",
+      "WORKDIR /app",
+      "",
+      "COPY package*.json ./",
+      "",
+      "RUN npm install",
+      "",
+      "COPY . .",
+      "",
+      "EXPOSE ${2:3000}",
+      "",
+      "CMD [\"${3:npm}\", \"${4:start}\"]"
+    ],
+    "description": "Cria um Dockerfile básico"
+  },
+
+  // Docker Compose básico
+  "Basic Docker Compose": {
+    "prefix": "fs-docker-compose",
+    "body": [
+      "version: '3.8'",
+      "",
+      "services:",
+      "  ${1:app}:",
+      "    build:",
+      "      context: .",
+      "      dockerfile: Dockerfile",
+      "    ports:",
+      "      - \"${2:3000}:${3:3000}\"",
+      "    environment:",
+      "      - NODE_ENV=${4:development}",
+      "    volumes:",
+      "      - .:/app",
+      "      - /app/node_modules"
+    ],
+    "description": "Cria um docker-compose.yml básico"
+  },
+
+  // Multi-stage build
+  "Multi-stage Dockerfile": {
+    "prefix": "fs-docker-multistage",
+    "body": [
+      "# Build stage",
+      "FROM ${1:node:latest} as builder",
+      "",
+      "WORKDIR /app",
+      "",
+      "COPY package*.json ./",
+      "RUN npm install",
+      "",
+      "COPY . .",
+      "RUN npm run build",
+      "",
+      "# Production stage",
+      "FROM ${2:node:alpine}",
+      "",
+      "WORKDIR /app",
+      "",
+      "COPY --from=builder /app/dist ./dist",
+      "COPY package*.json ./",
+      "",
+      "RUN npm install --only=production",
+      "",
+      "EXPOSE ${3:3000}",
+      "",
+      "CMD [\"${4:npm}\", \"${5:start}\"]"
+    ],
+    "description": "Cria um Dockerfile com multi-stage build"
+  },
+
+  // Docker Volume
+  "Docker Volume": {
+    "prefix": "fs-docker-volume",
+    "body": [
+      "volumes:",
+      "  ${1:volume_name}:",
+      "    driver: ${2:local}",
+      "    driver_opts:",
+      "      type: ${3:none}",
+      "      device: ${4:/path/on/host}",
+      "      o: bind"
+    ],
+    "description": "Configuração de volume Docker"
+  },
+
+  // Docker Network
+  "Docker Network": {
+    "prefix": "fs-docker-network",
+    "body": [
+      "networks:",
+      "  ${1:network_name}:",
+      "    driver: ${2:bridge}",
+      "    ipam:",
+      "      driver: default",
+      "      config:",
+      "        - subnet: ${3:172.28.0.0/16}"
+    ],
+    "description": "Configuração de rede Docker"
+  },
+
+  // Docker Healthcheck
+  "Docker Healthcheck": {
+    "prefix": "fs-docker-healthcheck",
+    "body": [
+      "HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \\",
+      "  CMD ${1:curl -f http://localhost:3000/health || exit 1}"
+    ],
+    "description": "Adiciona healthcheck ao Dockerfile"
+  },
+
+  // Docker Environment Variables
+  "Docker Environment": {
+    "prefix": "fs-docker-env",
+    "body": [
+      "environment:",
+      "  - ${1:ENV_NAME}=${2:value}",
+      "  - ${3:ANOTHER_ENV}=${4:value}"
+    ],
+    "description": "Configuração de variáveis de ambiente"
+  },
+
+  // Docker Service Dependencies
+  "Docker Depends On": {
+    "prefix": "fs-docker-depends",
+    "body": [
+      "depends_on:",
+      "  ${1:service_name}:",
+      "    condition: service_healthy"
+    ],
+    "description": "Configuração de dependências entre serviços"
+  }
+}
