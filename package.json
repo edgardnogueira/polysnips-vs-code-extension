@@ -2,7 +2,7 @@
   "name": "my-vscode-snippets",
   "displayName": "My vscode snippets",
   "description": "Snippets",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.96.0"
   },

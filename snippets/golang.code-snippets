@@ -1,7 +1,7 @@
 {
   // Snippet 1: Arquivo main com função principal
   "Go Main Function": {
-    "prefix": "edg-main",
+    "prefix": "fs-go-main",
     "body": [
       "package main",
       "",
@@ -18,7 +18,7 @@
 
   // Snippet 2: Teste básico com a biblioteca 'testing'
   "Go Testing Function": {
-    "prefix": "edg-test",
+    "prefix": "fs-go-test",
     "body": [
       "package $1",
       "",
@@ -38,7 +38,7 @@
 
   // Snippet 3: Declaração de struct
   "Go Struct": {
-    "prefix": "edg-struct",
+    "prefix": "fs-go-struct",
     "body": [
       "type $1 struct {",
       "  $2 string",
@@ -51,7 +51,7 @@
 
   // Snippet 4: Método de struct
   "Go Struct Method": {
-    "prefix": "edg-method",
+    "prefix": "fs-go-method",
     "body": [
       "func (s *$1) $2() $3 {",
       "  // Implementação do método",
@@ -63,7 +63,7 @@
 
   // Snippet 5: Inicialização de slice e loop
   "Go Slice & Range": {
-    "prefix": "edg-range",
+    "prefix": "fs-go-range",
     "body": [
       "$1 := []$2{",
       "  $3",
@@ -75,5 +75,66 @@
       "}"
     ],
     "description": "Cria um slice e itera sobre ele usando for range"
+  },
+  // Snippet para fmt.Printf com formatação
+  "Go fmt.Printf": {
+    "prefix": "fs-go-printf",
+    "body": ["fmt.Printf(\"$1: %$2\\n\", $3)"],
+    "description": "Insere fmt.Printf com placeholder para formatação"
+  },
+
+  // Snippet para fmt.Sprintf
+  "Go fmt.Sprintf": {
+    "prefix": "fs-go-sprintf",
+    "body": ["formatted := fmt.Sprintf(\"$1: %$2\", $3)"],
+    "description": "Cria uma string formatada usando fmt.Sprintf"
+  },
+
+  // Snippet para fmt.Errorf
+  "Go fmt.Errorf": {
+    "prefix": "fs-go-errorf",
+    "body": ["err := fmt.Errorf(\"$1: %$2\", $3)"],
+    "description": "Cria um erro formatado usando fmt.Errorf"
+  },
+
+  // Snippet para slog.Info
+  "Go slog.Info": {
+    "prefix": "fs-go-slog-info",
+    "body": ["slog.Info(\"$1\", \"$2\", $3)"],
+    "description": "Log de informação usando slog.Info"
+  },
+
+  // Snippet para slog.Error
+  "Go slog.Error": {
+    "prefix": "fs-go-slog-error",
+    "body": ["slog.Error(\"$1\", \"error\", err$2)"],
+    "description": "Log de erro usando slog.Error"
+  },
+
+  // Snippet para slog.Debug
+  "Go slog.Debug": {
+    "prefix": "fs-go-slog-debug",
+    "body": ["slog.Debug(\"$1\", \"$2\", $3)"],
+    "description": "Log de debug usando slog.Debug"
+  },
+
+  // Snippet para configuração do slog
+  "Go slog Setup": {
+    "prefix": "fs-go-slog-setup",
+    "body": [
+      "logger := slog.New(slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{",
+      "  Level: slog.Level$1,       // Debug, Info, Warn, Error",
+      "  AddSource: $2,             // true/false para incluir informações do arquivo fonte",
+      "}))",
+      "slog.SetDefault(logger)"
+    ],
+    "description": "Configuração básica do slog com handler JSON"
+  },
+
+  // Snippet para fmt.Scan
+  "Go fmt.Scan": {
+    "prefix": "fs-go-scan",
+    "body": ["var $1 $2", "fmt.Scan(&$1)"],
+    "description": "Lê entrada do usuário usando fmt.Scan"
   }
 }

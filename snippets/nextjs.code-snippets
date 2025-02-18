@@ -1,7 +1,7 @@
 {
   // Exemplo de criação de um componente básico de página
   "NextPage Template": {
-    "prefix": "nextpage",
+    "prefix": "fs-next-nextpage",
     "body": [
       "import React from 'react';",
       "",
@@ -18,7 +18,7 @@
 
   // getStaticProps
   "getStaticProps": {
-    "prefix": "gsp",
+    "prefix": "fs-next-gsp",
     "body": [
       "export async function getStaticProps() {",
       "  // Você pode buscar dados aqui, por exemplo:",
@@ -38,7 +38,7 @@
 
   // getStaticPaths
   "getStaticPaths": {
-    "prefix": "gspaths",
+    "prefix": "fs-next-gspaths",
     "body": [
       "export async function getStaticPaths() {",
       "  // Exemplo de paths fixos, ou gerados dinamicamente via API",
@@ -55,7 +55,7 @@
 
   // getServerSideProps
   "getServerSideProps": {
-    "prefix": "gssp",
+    "prefix": "fs-next-gssp",
     "body": [
       "export async function getServerSideProps(context) {",
       "  // Você pode buscar dados diretamente no servidor aqui",
@@ -74,7 +74,7 @@
 
   // API route
   "API Route": {
-    "prefix": "api",
+    "prefix": "fs-next-api",
     "body": [
       "export default function handler(req, res) {",
       "  const { method } = req;",
