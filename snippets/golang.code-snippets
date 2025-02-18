@@ -147,5 +147,417 @@
       "}"
     ],
     "description": "Cria uma interface Go com métodos de exemplo"
+  },
+  // Snippets GORM
+  "GORM Model": {
+    "prefix": "fs-go-gorm-model",
+    "body": [
+      "type ${1:ModelName} struct {",
+      "  gorm.Model",
+      "  ${2:Field} ${3:string} `gorm:\"${4:column:field_name}\"`",
+      "  ${5:Field2} ${6:int} `gorm:\"${7:column:field2_name}\"`",
+      "}"
+    ],
+    "description": "Cria uma struct model do GORM"
+  },
+
+  "GORM DB Connection": {
+    "prefix": "fs-go-gorm-connect",
+    "body": [
+      "dsn := \"${1:host=${2:localhost} user=${3:postgres} password=${4:password} dbname=${5:dbname} port=${6:5432} sslmode=disable}\"",
+      "db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})",
+      "if err != nil {",
+      "  ${7:panic(\"failed to connect database\")}",
+      "}",
+      "",
+      "// Configurações opcionais",
+      "sqlDB, err := db.DB()",
+      "if err != nil {",
+      "  ${8:panic(err)}",
+      "}",
+      "",
+      "// SetMaxIdleConns define o número máximo de conexões no pool de conexões ociosas",
+      "sqlDB.SetMaxIdleConns(${9:10})",
+      "",
+      "// SetMaxOpenConns define o número máximo de conexões abertas com o banco de dados",
+      "sqlDB.SetMaxOpenConns(${10:100})",
+      "",
+      "// SetConnMaxLifetime define o tempo máximo que uma conexão pode ser reutilizada",
+      "sqlDB.SetConnMaxLifetime(${11:time.Hour})"
+    ],
+    "description": "Configura conexão com banco de dados usando GORM"
+  },
+
+  "GORM Create": {
+    "prefix": "fs-go-gorm-create",
+    "body": [
+      "${1:record} := &${2:Model}{",
+      "  ${3:Field}: ${4:value},",
+      "}",
+      "",
+      "result := db.Create(&${1:record})",
+      "if result.Error != nil {",
+      "  ${5:// Handle error}",
+      "}"
+    ],
+    "description": "Cria um novo registro usando GORM"
+  },
+
+  "GORM Find": {
+    "prefix": "fs-go-gorm-find",
+    "body": [
+      "var ${1:records} []${2:Model}",
+      "result := db.Find(&${1:records})",
+      "if result.Error != nil {",
+      "  ${3:// Handle error}",
+      "}"
+    ],
+    "description": "Busca registros usando GORM"
+  },
+
+  "GORM Find One": {
+    "prefix": "fs-go-gorm-find-one",
+    "body": [
+      "var ${1:record} ${2:Model}",
+      "result := db.Where(\"${3:field} = ?\", ${4:value}).First(&${1:record})",
+      "if result.Error != nil {",
+      "  ${5:// Handle error}",
+      "}"
+    ],
+    "description": "Busca um registro usando GORM com Where"
+  },
+
+  "GORM Update": {
+    "prefix": "fs-go-gorm-update",
+    "body": [
+      "result := db.Model(&${1:record}).Updates(${2:Model}{",
+      "  ${3:Field}: ${4:value},",
+      "})",
+      "if result.Error != nil {",
+      "  ${5:// Handle error}",
+      "}"
+    ],
+    "description": "Atualiza um registro usando GORM"
+  },
+
+  "GORM Delete": {
+    "prefix": "fs-go-gorm-delete",
+    "body": [
+      "result := db.Delete(&${1:Model}{}, ${2:1})",
+      "if result.Error != nil {",
+      "  ${3:// Handle error}",
+      "}"
+    ],
+    "description": "Deleta um registro usando GORM"
+  },
+
+  "GORM Transaction": {
+    "prefix": "fs-go-gorm-transaction",
+    "body": [
+      "err := db.Transaction(func(tx *gorm.DB) error {",
+      "  // Operações dentro da transação",
+      "  if err := tx.Create(&${1:record1}).Error; err != nil {",
+      "    return err",
+      "  }",
+      "",
+      "  if err := tx.Create(&${2:record2}).Error; err != nil {",
+      "    return err",
+      "  }",
+      "",
+      "  return nil",
+      "})",
+      "",
+      "if err != nil {",
+      "  ${3:// Handle error}",
+      "}"
+    ],
+    "description": "Cria uma transação usando GORM"
+  },
+
+  "GORM Preload": {
+    "prefix": "fs-go-gorm-preload",
+    "body": [
+      "var ${1:records} []${2:Model}",
+      "result := db.Preload(\"${3:Association}\").Find(&${1:records})",
+      "if result.Error != nil {",
+      "  ${4:// Handle error}",
+      "}"
+    ],
+    "description": "Busca registros com preload de associações"
+  },
+
+  "GORM Migration": {
+    "prefix": "fs-go-gorm-migrate",
+    "body": [
+      "// Auto Migrate",
+      "err := db.AutoMigrate(",
+      "  &${1:Model1}{},",
+      "  &${2:Model2}{},",
+      ")",
+      "if err != nil {",
+      "  ${3:panic(\"failed to migrate database\")}",
+      "}"
+    ],
+    "description": "Executa migração automática do GORM"
+  },
+
+  "GORM Repository": {
+    "prefix": "fs-go-gorm-repository",
+    "body": [
+      "type ${1:Model}Repository struct {",
+      "  db *gorm.DB",
+      "}",
+      "",
+      "func New${1:Model}Repository(db *gorm.DB) *${1:Model}Repository {",
+      "  return &${1:Model}Repository{",
+      "    db: db,",
+      "  }",
+      "}",
+      "",
+      "func (r *${1:Model}Repository) Create(${2:model} *${1:Model}) error {",
+      "  return r.db.Create(${2:model}).Error",
+      "}",
+      "",
+      "func (r *${1:Model}Repository) FindByID(id uint) (*${1:Model}, error) {",
+      "  var ${2:model} ${1:Model}",
+      "  err := r.db.First(&${2:model}, id).Error",
+      "  return &${2:model}, err",
+      "}",
+      "",
+      "func (r *${1:Model}Repository) FindByField(field string, value interface{}) (*${1:Model}, error) {",
+      "  var ${2:model} ${1:Model}",
+      "  err := r.db.Where(field+\" = ?\", value).First(&${2:model}).Error",
+      "  return &${2:model}, err",
+      "}",
+      "",
+      "func (r *${1:Model}Repository) FindAll() ([]${1:Model}, error) {",
+      "  var ${2:models} []${1:Model}",
+      "  err := r.db.Find(&${2:models}).Error",
+      "  return ${2:models}, err",
+      "}",
+      "",
+      "func (r *${1:Model}Repository) FindWithFilters(filters map[string]interface{}) ([]${1:Model}, error) {",
+      "  var ${2:models} []${1:Model}",
+      "  err := r.db.Where(filters).Find(&${2:models}).Error",
+      "  return ${2:models}, err",
+      "}",
+      "",
+      "func (r *${1:Model}Repository) FindComplex(query interface{}, args ...interface{}) ([]${1:Model}, error) {",
+      "  var ${2:models} []${1:Model}",
+      "  err := r.db.Where(query, args...).Find(&${2:models}).Error",
+      "  return ${2:models}, err",
+      "}",
+      "",
+      "func (r *${1:Model}Repository) FindWithJoin(joinTable string, condition string) ([]${1:Model}, error) {",
+      "  var ${2:models} []${1:Model}",
+      "  err := r.db.Joins(joinTable, condition).Find(&${2:models}).Error",
+      "  return ${2:models}, err",
+      "}",
+      "",
+      "func (r *${1:Model}Repository) Update(${2:model} *${1:Model}) error {",
+      "  return r.db.Save(${2:model}).Error",
+      "}",
+      "",
+      "func (r *${1:Model}Repository) Delete(id uint) error {",
+      "  return r.db.Delete(&${1:Model}{}, id).Error",
+      "}"
+    ],
+    "description": "Cria uma estrutura de repositório usando GORM"
+  },
+
+  "GORM Complex Query": {
+    "prefix": "fs-go-gorm-complex",
+    "body": [
+      "result := db.Where(\"${1:field} = ?\", ${2:value}).",
+      "           Or(\"${3:other_field} = ?\", ${4:other_value}).",
+      "           Not(\"${5:excluded_field} = ?\", ${6:excluded_value}).",
+      "           Where(\"${7:field} LIKE ?\", \"%${8:pattern}%\").",
+      "           Where(\"${9:field} IN (?)\", []${10:string}{${11:values}}).",
+      "           Order(\"${12:field} ${13|DESC,ASC|}\").",
+      "           Group(\"${14:field}\").",
+      "           Having(\"${15:condition}\").",
+      "           Find(&${16:records})",
+      "",
+      "if result.Error != nil {",
+      "  ${17:// Handle error}",
+      "}"
+    ],
+    "description": "Cria uma consulta complexa usando GORM com múltiplos operadores"
+  },
+
+  "GORM Join Query": {
+    "prefix": "fs-go-gorm-join",
+    "body": [
+      "result := db.Model(&${1:Model}{}).",
+      "           Joins(\"JOIN ${2:other_table} ON ${3:condition}\").",
+      "           Where(\"${4:field} = ?\", ${5:value}).",
+      "           Find(&${6:records})",
+      "",
+      "if result.Error != nil {",
+      "  ${7:// Handle error}",
+      "}"
+    ],
+    "description": "Cria uma consulta com JOIN usando GORM"
+  },
+
+  "GORM OR Conditions": {
+    "prefix": "fs-go-gorm-or",
+    "body": [
+      "result := db.Where(\"${1:field1} = ?\", ${2:value1}).",
+      "           Or(\"${3:field2} = ?\", ${4:value2}).",
+      "           Find(&${5:records})",
+      "",
+      "if result.Error != nil {",
+      "  ${6:// Handle error}",
+      "}"
+    ],
+    "description": "Cria uma consulta com condições OR usando GORM"
+  },
+
+  "GORM Like Query": {
+    "prefix": "fs-go-gorm-like",
+    "body": [
+      "result := db.Where(\"${1:field} LIKE ?\", \"%${2:pattern}%\").",
+      "           Find(&${3:records})",
+      "",
+      "if result.Error != nil {",
+      "  ${4:// Handle error}",
+      "}"
+    ],
+    "description": "Cria uma consulta LIKE usando GORM"
+  },
+
+  "GORM Group By": {
+    "prefix": "fs-go-gorm-group",
+    "body": [
+      "type Result struct {",
+      "  ${1:Field} ${2:string}",
+      "  ${3:Count} int64",
+      "}",
+      "",
+      "var results []Result",
+      "result := db.Model(&${4:Model}{}).",
+      "           Select(\"${1:field}, count(*) as count\").",
+      "           Group(\"${1:field}\").",
+      "           Having(\"count > ?\", ${5:1}).",
+      "           Find(&results)",
+      "",
+      "if result.Error != nil {",
+      "  ${6:// Handle error}",
+      "}"
+    ],
+    "description": "Cria uma consulta com GROUP BY e HAVING usando GORM"
+  }
+"GORM Repository Interface": {
+    "prefix": "fs-go-gorm-repository-interface",
+    "body": [
+      "type ${1:Model}Repository interface {",
+      "  Create(${2:model} *${1:Model}) error",
+      "  FindByID(id uint) (*${1:Model}, error)",
+      "  FindByField(field string, value interface{}) (*${1:Model}, error)",
+      "  FindAll() ([]${1:Model}, error)",
+      "  FindWithFilters(filters map[string]interface{}) ([]${1:Model}, error)",
+      "  FindComplex(query interface{}, args ...interface{}) ([]${1:Model}, error)",
+      "  FindWithJoin(joinTable string, condition string) ([]${1:Model}, error)",
+      "  Update(${2:model} *${1:Model}) error",
+      "  Delete(id uint) error",
+      "}"
+    ],
+    "description": "Cria uma interface para o repository do GORM"
+  },
+
+  "GORM Service Interface": {
+    "prefix": "fs-go-gorm-service-interface",
+    "body": [
+      "type ${1:Model}Service interface {",
+      "  Create(ctx context.Context, ${2:model} *${1:Model}) error",
+      "  GetByID(ctx context.Context, id uint) (*${1:Model}, error)",
+      "  List(ctx context.Context) ([]${1:Model}, error)",
+      "  Update(ctx context.Context, ${2:model} *${1:Model}) error",
+      "  Delete(ctx context.Context, id uint) error",
+      "}"
+    ],
+    "description": "Cria uma interface para o service do GORM"
+  },
+
+  "GORM Service Implementation": {
+    "prefix": "fs-go-gorm-service-impl",
+    "body": [
+      "type ${1:Model}ServiceImpl struct {",
+      "  repo ${1:Model}Repository",
+      "}",
+      "",
+      "func New${1:Model}Service(repo ${1:Model}Repository) ${1:Model}Service {",
+      "  return &${1:Model}ServiceImpl{",
+      "    repo: repo,",
+      "  }",
+      "}",
+      "",
+      "// Create cria um novo registro",
+      "func (s *${1:Model}ServiceImpl) Create(ctx context.Context, ${2:model} *${1:Model}) error {",
+      "  // Validações e regras de negócio aqui",
+      "  if err := s.validate${1:Model}(${2:model}); err != nil {",
+      "    return err",
+      "  }",
+      "",
+      "  return s.repo.Create(${2:model})",
+      "}",
+      "",
+      "// GetByID busca um registro pelo ID",
+      "func (s *${1:Model}ServiceImpl) GetByID(ctx context.Context, id uint) (*${1:Model}, error) {",
+      "  ${2:model}, err := s.repo.FindByID(id)",
+      "  if err != nil {",
+      "    if errors.Is(err, gorm.ErrRecordNotFound) {",
+      "      return nil, fmt.Errorf(\"${1:Model} não encontrado\")",
+      "    }",
+      "    return nil, fmt.Errorf(\"erro ao buscar ${1:Model}: %w\", err)",
+      "  }",
+      "",
+      "  return ${2:model}, nil",
+      "}",
+      "",
+      "// List retorna todos os registros",
+      "func (s *${1:Model}ServiceImpl) List(ctx context.Context) ([]${1:Model}, error) {",
+      "  return s.repo.FindAll()",
+      "}",
+      "",
+      "// Update atualiza um registro",
+      "func (s *${1:Model}ServiceImpl) Update(ctx context.Context, ${2:model} *${1:Model}) error {",
+      "  // Verifica se existe",
+      "  existing, err := s.GetByID(ctx, ${2:model}.ID)",
+      "  if err != nil {",
+      "    return err",
+      "  }",
+      "",
+      "  // Validações e regras de negócio aqui",
+      "  if err := s.validate${1:Model}(${2:model}); err != nil {",
+      "    return err",
+      "  }",
+      "",
+      "  return s.repo.Update(${2:model})",
+      "}",
+      "",
+      "// Delete remove um registro",
+      "func (s *${1:Model}ServiceImpl) Delete(ctx context.Context, id uint) error {",
+      "  // Verifica se existe",
+      "  if _, err := s.GetByID(ctx, id); err != nil {",
+      "    return err",
+      "  }",
+      "",
+      "  return s.repo.Delete(id)",
+      "}",
+      "",
+      "// validate${1:Model} realiza validações do modelo",
+      "func (s *${1:Model}ServiceImpl) validate${1:Model}(${2:model} *${1:Model}) error {",
+      "  // Adicione suas validações aqui",
+      "  ${3:// Exemplo:}",
+      "  ${4:// if ${2:model}.Name == \"\" {",
+      "  //   return fmt.Errorf(\"nome é obrigatório\")",
+      "  // \\}}",
+      "",
+      "  return nil",
+      "}"
+    ],
+    "description": "Cria uma implementação do service com CRUD básico usando repository GORM"
   }
 }

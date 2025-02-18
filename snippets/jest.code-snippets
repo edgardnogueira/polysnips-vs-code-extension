@@ -1,0 +1,116 @@
+{
+  // Test Suite
+  "Jest Test Suite": {
+    "prefix": "fs-jest-desc",
+    "body": [
+      "describe('${1:Suite description}', () => {",
+      "  ${2:// tests go here}",
+      "});"
+    ],
+    "description": "Cria uma suite de testes Jest"
+  },
+
+  // Test Case
+  "Jest Test Case": {
+    "prefix": "fs-jest-test",
+    "body": [
+      "test('${1:should }', () => {",
+      "  ${2:// test implementation}",
+      "});"
+    ],
+    "description": "Cria um caso de teste"
+  },
+
+  // Test Case (it syntax)
+  "Jest It Case": {
+    "prefix": "fs-jest-it",
+    "body": [
+      "it('${1:should }', () => {",
+      "  ${2:// test implementation}",
+      "});"
+    ],
+    "description": "Cria um caso de teste usando sintaxe it"
+  },
+
+  // beforeEach hook
+  "Jest beforeEach": {
+    "prefix": "fs-jest-before-each",
+    "body": ["beforeEach(() => {", "  ${1:// setup code}", "});"],
+    "description": "Adiciona hook beforeEach"
+  },
+
+  // afterEach hook
+  "Jest afterEach": {
+    "prefix": "fs-jest-after-each",
+    "body": ["afterEach(() => {", "  ${1:// cleanup code}", "});"],
+    "description": "Adiciona hook afterEach"
+  },
+
+  // Mock Function
+  "Jest Mock Function": {
+    "prefix": "fs-jest-mock-fn",
+    "body": [
+      "const ${1:mockName} = jest.fn(${2:()} => {",
+      "  ${3:return ${4:value}}",
+      "});"
+    ],
+    "description": "Cria uma função mock do Jest"
+  },
+
+  // Spy On
+  "Jest Spy On": {
+    "prefix": "fs-jest-spy",
+    "body": ["jest.spyOn(${1:object}, '${2:method}')"],
+    "description": "Cria um spy em um método"
+  },
+
+  // Common Expects
+  "Jest Expect Common": {
+    "prefix": "fs-jest-expect",
+    "body": [
+      "expect(${1:value}).${2|toBe,toEqual,toBeDefined,toBeTruthy,toBeFalsy,toBeNull,toBeUndefined,toContain,toHaveLength,toHaveBeenCalled,toHaveBeenCalledWith,toHaveBeenCalledTimes|}(${3:expected});"
+    ],
+    "description": "Adiciona uma asserção comum do Jest"
+  },
+
+  // Mock Implementation
+  "Jest Mock Implementation": {
+    "prefix": "fs-jest-mock-impl",
+    "body": [
+      "jest.mock('${1:module}', () => ({",
+      "  ${2:exportedFunction}: jest.fn(${3:() => ${4:mockReturn}})",
+      "}));"
+    ],
+    "description": "Cria uma implementação mock de um módulo"
+  },
+
+  // Complete Test Example
+  "Jest Complete Test": {
+    "prefix": "fs-jest-complete",
+    "body": [
+      "describe('${1:Component/Function name}', () => {",
+      "  let ${2:testVariable};",
+      "",
+      "  beforeEach(() => {",
+      "    ${3:// Setup code}",
+      "  });",
+      "",
+      "  afterEach(() => {",
+      "    ${4:// Cleanup code}",
+      "  });",
+      "",
+      "  it('${5:should do something}', () => {",
+      "    // Arrange",
+      "    ${6:const input = 'test';}",
+      "",
+      "    // Act",
+      "    ${7:const result = someFunction(input);}",
+      "",
+      "    // Assert",
+      "    ${8:expect(result).toBe('expected');}",
+      "  });",
+      "});"
+    ],
+    "description": "Cria uma estrutura completa de teste"
+  }
+}

@@ -1,13 +1,37 @@
 {
   "name": "fullstack-snippets",
   "displayName": "FullStack vscode snippets",
-  "description": "Snippets",
-  "version": "0.0.6",
+  "description": "Snippets para desenvolvimento fullstack incluindo JavaScript, TypeScript, Go, PHP, Docker e mais",
+  "version": "0.0.9",
+  "publisher": "my-publisher-id",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edgardnogueira/vs-code-snippetss"
+  },
+  "keywords": [
+    "snippets",
+    "javascript",
+    "typescript",
+    "go",
+    "php",
+    "docker",
+    "gorm",
+    "jest",
+    "sql"
+  ],
+  "author": {
+    "name": "Seu Nome"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edgardnogueira/vs-code-snippetss/issues"
+  },
+  "homepage": "https://github.com/edgardnogueira/vs-code-snippetss#readme",
   "engines": {
     "vscode": "^1.96.0"
   },
   "categories": [
-    "Other"
+    "Snippets"
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
@@ -38,12 +62,28 @@
         "path": "./snippets/golang.code-snippets"
       },
       {
+        "language": "go",
+        "path": "./snippets/golang-tests.code-snippets"
+      },
+      {
         "language": "php",
         "path": "./snippets/php.code-snippets"
       },
       {
         "language": "docker",
         "path": "./snippets/docker.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/jest.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/jest.code-snippets"
+      },
+      {
+        "language": "sql",
+        "path": "./snippets/sql.code-snippets"
       }
     ]
   },

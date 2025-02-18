@@ -1,0 +1,134 @@
+{
+  // Select básico
+  "SQL Select": {
+    "prefix": "fs-sql-select",
+    "body": [
+      "SELECT ${1:columns}",
+      "FROM ${2:table_name}",
+      "WHERE ${3:condition};"
+    ],
+    "description": "Query SELECT básica"
+  },
+
+  // Insert
+  "SQL Insert": {
+    "prefix": "fs-sql-insert",
+    "body": [
+      "INSERT INTO ${1:table_name} (${2:columns})",
+      "VALUES (${3:values});"
+    ],
+    "description": "Query INSERT básica"
+  },
+
+  // Update
+  "SQL Update": {
+    "prefix": "fs-sql-update",
+    "body": [
+      "UPDATE ${1:table_name}",
+      "SET ${2:column} = ${3:value}",
+      "WHERE ${4:condition};"
+    ],
+    "description": "Query UPDATE básica"
+  },
+
+  // Delete
+  "SQL Delete": {
+    "prefix": "fs-sql-delete",
+    "body": ["DELETE FROM ${1:table_name}", "WHERE ${2:condition};"],
+    "description": "Query DELETE básica"
+  },
+
+  // Join
+  "SQL Join": {
+    "prefix": "fs-sql-join",
+    "body": [
+      "SELECT ${1:columns}",
+      "FROM ${2:table1}",
+      "${3|JOIN,LEFT JOIN,RIGHT JOIN,FULL JOIN|} ${4:table2}",
+      "ON ${5:table1.id} = ${6:table2.id}",
+      "WHERE ${7:condition};"
+    ],
+    "description": "Query com JOIN"
+  },
+
+  // Create Table
+  "SQL Create Table": {
+    "prefix": "fs-sql-create-table",
+    "body": [
+      "CREATE TABLE ${1:table_name} (",
+      "  ${2:id} ${3|INT,VARCHAR(255),TEXT,BOOLEAN,TIMESTAMP,DECIMAL|} ${4|PRIMARY KEY,NOT NULL,NULL,UNIQUE|},",
+      "  ${5:column_name} ${6|INT,VARCHAR(255),TEXT,BOOLEAN,TIMESTAMP,DECIMAL|} ${7|NOT NULL,NULL,UNIQUE|},",
+      "  ${8:// Adicione mais colunas conforme necessário}",
+      "  CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+      ");"
+    ],
+    "description": "Cria uma nova tabela"
+  },
+
+  // Index
+  "SQL Create Index": {
+    "prefix": "fs-sql-index",
+    "body": [
+      "CREATE ${1|INDEX,UNIQUE INDEX|} ${2:index_name}",
+      "ON ${3:table_name} (${4:column_name});"
+    ],
+    "description": "Cria um índice"
+  },
+
+  // Common Table Expression (CTE)
+  "SQL CTE": {
+    "prefix": "fs-sql-cte",
+    "body": [
+      "WITH ${1:cte_name} AS (",
+      "  SELECT ${2:columns}",
+      "  FROM ${3:table_name}",
+      "  WHERE ${4:condition}",
+      ")",
+      "SELECT ${5:columns}",
+      "FROM ${1:cte_name}",
+      "WHERE ${6:condition};"
+    ],
+    "description": "Query usando Common Table Expression"
+  },
+
+  // Stored Procedure
+  "SQL Stored Procedure": {
+    "prefix": "fs-sql-procedure",
+    "body": [
+      "CREATE PROCEDURE ${1:procedure_name} (",
+      "  ${2:parameter_name} ${3|IN,OUT,INOUT|} ${4|INT,VARCHAR(255),TEXT,BOOLEAN,TIMESTAMP,DECIMAL|}",
+      ")",
+      "BEGIN",
+      "  ${5:-- Procedure logic here}",
+      "END;"
+    ],
+    "description": "Cria uma Stored Procedure"
+  },
+
+  // Trigger
+  "SQL Trigger": {
+    "prefix": "fs-sql-trigger",
+    "body": [
+      "CREATE TRIGGER ${1:trigger_name}",
+      "${2|BEFORE,AFTER|} ${3|INSERT,UPDATE,DELETE|}",
+      "ON ${4:table_name}",
+      "FOR EACH ROW",
+      "BEGIN",
+      "  ${5:-- Trigger logic here}",
+      "END;"
+    ],
+    "description": "Cria um Trigger"
+  },
+
+  // Group By com Having
+  "SQL Group By": {
+    "prefix": "fs-sql-group",
+    "body": [
+      "SELECT ${1:columns}, ${2:aggregate_function}(${3:column})",
+      "FROM ${4:table_name}",
+      "GROUP BY ${1:columns}",
+      "HAVING ${5:condition};"
+    ],
+    "description": "Query com GROUP BY e HAVING"
+  }
+}
