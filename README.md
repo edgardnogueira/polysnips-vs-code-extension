@@ -39,84 +39,84 @@ npm run install-extension fullstack-snippets-0.0.6.vsix
 
 | Prefixo           | Descrição                       |
 | ----------------- | ------------------------------- |
-| `fs-js-map`       | Cria um novo array usando map   |
-| `fs-js-filter`    | Filtra elementos do array       |
-| `fs-js-reduce`    | Reduz array para um único valor |
-| `fs-js-find`      | Encontra um elemento no array   |
-| `fs-js-foreach`   | Itera sobre elementos do array  |
-| `fs-js-merge-obj` | Mescla objetos usando spread    |
-| `fs-js-dest-obj`  | Desestruturação de objeto       |
+| `ps-js-map`       | Cria um novo array usando map   |
+| `ps-js-filter`    | Filtra elementos do array       |
+| `ps-js-reduce`    | Reduz array para um único valor |
+| `ps-js-find`      | Encontra um elemento no array   |
+| `ps-js-foreach`   | Itera sobre elementos do array  |
+| `ps-js-merge-obj` | Mescla objetos usando spread    |
+| `ps-js-dest-obj`  | Desestruturação de objeto       |
 
 ### Go - Básico
 
 | Prefixo           | Descrição                   |
 | ----------------- | --------------------------- |
-| `fs-go-main`      | Cria função main            |
-| `fs-go-test`      | Cria função de teste        |
-| `fs-go-struct`    | Cria uma struct             |
-| `fs-go-method`    | Adiciona um método a struct |
-| `fs-go-interface` | Cria uma interface          |
-| `fs-go-range`     | Cria slice e loop range     |
+| `ps-go-main`      | Cria função main            |
+| `ps-go-test`      | Cria função de teste        |
+| `ps-go-struct`    | Cria uma struct             |
+| `ps-go-method`    | Adiciona um método a struct |
+| `ps-go-interface` | Cria uma interface          |
+| `ps-go-range`     | Cria slice e loop range     |
 
 ### Go - GORM & Database
 
 | Prefixo                           | Descrição                     |
 | --------------------------------- | ----------------------------- |
-| `fs-go-gorm-model`                | Cria model do GORM            |
-| `fs-go-gorm-connect`              | Configuração de conexão       |
-| `fs-go-gorm-repository`           | Cria repository completo      |
-| `fs-go-gorm-repository-interface` | Cria interface do repository  |
-| `fs-go-gorm-service-interface`    | Cria interface do service     |
-| `fs-go-gorm-service-impl`         | Cria implementação do service |
-| `fs-go-gorm-find`                 | Busca registros               |
-| `fs-go-gorm-complex`              | Query complexa                |
-| `fs-go-gorm-join`                 | Query com JOIN                |
+| `ps-go-gorm-model`                | Cria model do GORM            |
+| `ps-go-gorm-connect`              | Configuração de conexão       |
+| `ps-go-gorm-repository`           | Cria repository completo      |
+| `ps-go-gorm-repository-interface` | Cria interface do repository  |
+| `ps-go-gorm-service-interface`    | Cria interface do service     |
+| `ps-go-gorm-service-impl`         | Cria implementação do service |
+| `ps-go-gorm-find`                 | Busca registros               |
+| `ps-go-gorm-complex`              | Query complexa                |
+| `ps-go-gorm-join`                 | Query com JOIN                |
 
 ### Go - Testes
 
 | Prefixo                        | Descrição                         |
 | ------------------------------ | --------------------------------- |
-| `fs-go-test-basic`             | Teste básico (Arrange-Act-Assert) |
-| `fs-go-test-table`             | Teste table-driven                |
-| `fs-go-test-repository`        | Testes para repository            |
-| `fs-go-test-service`           | Testes para service com mocks     |
-| `fs-go-test-mock-setup`        | Setup para testes com mock        |
-| `fs-go-test-integration-setup` | Setup para testes de integração   |
-| `fs-go-test-benchmark`         | Teste de benchmark                |
-| `fs-go-test-http`              | Teste para HTTP handler           |
+| `ps-go-test-basic`             | Teste básico (Arrange-Act-Assert) |
+| `ps-go-test-table`             | Teste table-driven                |
+| `ps-go-test-repository`        | Testes para repository            |
+| `ps-go-test-service`           | Testes para service com mocks     |
+| `ps-go-test-mock-setup`        | Setup para testes com mock        |
+| `ps-go-test-integration-setup` | Setup para testes de integração   |
+| `ps-go-test-benchmark`         | Teste de benchmark                |
+| `ps-go-test-http`              | Teste para HTTP handler           |
 
 ### PHP
 
 | Prefixo            | Descrição            |
 | ------------------ | -------------------- |
-| `fs-php-php-basic` | Estrutura PHP básica |
-| `fs-php-echo`      | Echo statement       |
-| `fs-php-func`      | Cria função          |
-| `fs-php-class`     | Cria classe          |
-| `fs-php-array`     | Cria array           |
-| `fs-php-foreach`   | Loop foreach         |
+| `ps-php-php-basic` | Estrutura PHP básica |
+| `ps-php-echo`      | Echo statement       |
+| `ps-php-func`      | Cria função          |
+| `ps-php-class`     | Cria classe          |
+| `ps-php-array`     | Cria array           |
+| `ps-php-foreach`   | Loop foreach         |
 
 ### Docker
 
 | Prefixo                 | Descrição                   |
 | ----------------------- | --------------------------- |
-| `fs-docker-basic`       | Dockerfile básico           |
-| `fs-docker-compose`     | Configuração docker-compose |
-| `fs-docker-multistage`  | Dockerfile multi-stage      |
-| `fs-docker-volume`      | Configuração de volume      |
-| `fs-docker-network`     | Configuração de rede        |
-| `fs-docker-healthcheck` | Healthcheck do Docker       |
+| `ps-docker-basic`       | Dockerfile básico           |
+| `ps-docker-compose`     | Configuração docker-compose |
+| `ps-docker-multistage`  | Dockerfile multi-stage      |
+| `ps-docker-volume`      | Configuração de volume      |
+| `ps-docker-network`     | Configuração de rede        |
+| `ps-docker-healthcheck` | Healthcheck do Docker       |
 
 ### SQL
 
 | Prefixo         | Descrição           |
 | --------------- | ------------------- |
-| `fs-sql-select` | Query SELECT        |
-| `fs-sql-insert` | Query INSERT        |
-| `fs-sql-update` | Query UPDATE        |
-| `fs-sql-delete` | Query DELETE        |
-| `fs-sql-join`   | Query com JOIN      |
-| `fs-sql-group`  | GROUP BY com HAVING |
+| `ps-sql-select` | Query SELECT        |
+| `ps-sql-insert` | Query INSERT        |
+| `ps-sql-update` | Query UPDATE        |
+| `ps-sql-delete` | Query DELETE        |
+| `ps-sql-join`   | Query com JOIN      |
+| `ps-sql-group`  | GROUP BY com HAVING |
 
 ## Exemplos de Uso
 
@@ -124,35 +124,35 @@ npm run install-extension fullstack-snippets-0.0.6.vsix
 
 ```go
 // 1. Crie a interface do repository
-// Digite: fs-go-gorm-repository-interface
+// Digite: ps-go-gorm-repository-interface
 type UserRepository interface {
     Create(user *User) error
     // ...
 }
 
 // 2. Crie a interface do service
-// Digite: fs-go-gorm-service-interface
+// Digite: ps-go-gorm-service-interface
 type UserService interface {
     Create(ctx context.Context, user *User) error
     // ...
 }
 
 // 3. Crie a implementação do repository
-// Digite: fs-go-gorm-repository
+// Digite: ps-go-gorm-repository
 type UserRepository struct {
     db *gorm.DB
 }
 // ...
 
 // 4. Crie a implementação do service
-// Digite: fs-go-gorm-service-impl
+// Digite: ps-go-gorm-service-impl
 type UserServiceImpl struct {
     repo UserRepository
 }
 // ...
 
 // 5. Crie os testes
-// Digite: fs-go-test-service
+// Digite: ps-go-test-service
 func TestUserService(t *testing.T) {
     // ...
 }
@@ -161,7 +161,7 @@ func TestUserService(t *testing.T) {
 ### Docker Compose com Healthcheck
 
 ```dockerfile
-# Digite: fs-docker-compose
+# Digite: ps-docker-compose
 version: '3.8'
 services:
   app:
