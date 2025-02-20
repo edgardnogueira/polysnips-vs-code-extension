@@ -1,7 +1,7 @@
 {
   // Exemplo de criação de um componente básico de página
   "NextPage Template": {
-    "prefix": "fs-next-nextpage",
+    "prefix": "ps-next-nextpage",
     "body": [
       "import React from 'react';",
       "",
@@ -18,7 +18,7 @@
 
   // getStaticProps
   "getStaticProps": {
-    "prefix": "fs-next-gsp",
+    "prefix": "ps-next-gsp",
     "body": [
       "export async function getStaticProps() {",
       "  // Você pode buscar dados aqui, por exemplo:",
@@ -38,7 +38,7 @@
 
   // getStaticPaths
   "getStaticPaths": {
-    "prefix": "fs-next-gspaths",
+    "prefix": "ps-next-gspaths",
     "body": [
       "export async function getStaticPaths() {",
       "  // Exemplo de paths fixos, ou gerados dinamicamente via API",
@@ -55,7 +55,7 @@
 
   // getServerSideProps
   "getServerSideProps": {
-    "prefix": "fs-next-gssp",
+    "prefix": "ps-next-gssp",
     "body": [
       "export async function getServerSideProps(context) {",
       "  // Você pode buscar dados diretamente no servidor aqui",
@@ -74,7 +74,7 @@
 
   // API route
   "API Route": {
-    "prefix": "fs-next-api",
+    "prefix": "ps-next-api",
     "body": [
       "export default function handler(req, res) {",
       "  const { method } = req;",
@@ -97,7 +97,7 @@
   },
   // Server Component
   "Next Server Component": {
-    "prefix": "fs-next-server",
+    "prefix": "ps-next-server",
     "body": [
       "import { Suspense } from 'react'",
       "",
@@ -123,7 +123,7 @@
 
   // Client Component
   "Next Client Component": {
-    "prefix": "fs-next-client",
+    "prefix": "ps-next-client",
     "body": [
       "'use client'",
       "",
@@ -163,7 +163,7 @@
 
   // Page with Layout
   "Next Page with Layout": {
-    "prefix": "fs-next-page-layout",
+    "prefix": "ps-next-page-layout",
     "body": [
       "import { Metadata } from 'next'",
       "",
@@ -197,7 +197,7 @@
 
   // Route Handler (API)
   "Next Route Handler": {
-    "prefix": "fs-next-route",
+    "prefix": "ps-next-route",
     "body": [
       "import { NextResponse } from 'next/server'",
       "import type { NextRequest } from 'next/server'",
@@ -226,7 +226,7 @@
 
   // Loading Component
   "Next Loading": {
-    "prefix": "fs-next-loading",
+    "prefix": "ps-next-loading",
     "body": [
       "export default function Loading() {",
       "  return (",
@@ -241,7 +241,7 @@
 
   // Error Component
   "Next Error": {
-    "prefix": "fs-next-error",
+    "prefix": "ps-next-error",
     "body": [
       "'use client'",
       "",
@@ -270,7 +270,7 @@
 
   // Form with Server Action
   "Next Form Action": {
-    "prefix": "fs-next-form-action",
+    "prefix": "ps-next-form-action",
     "body": [
       "'use server'",
       "",
@@ -303,7 +303,7 @@
 
   // Form Component with Client Validation
   "Next Form Component": {
-    "prefix": "fs-next-form",
+    "prefix": "ps-next-form",
     "body": [
       "'use client'",
       "",
@@ -345,7 +345,7 @@
 
   // Data Fetching Utils
   "Next Fetch Utils": {
-    "prefix": "fs-next-fetch-utils",
+    "prefix": "ps-next-fetch-utils",
     "body": [
       "type FetchError = {",
       "  message: string",
@@ -383,7 +383,7 @@
 
   // Middleware
   "Next Middleware": {
-    "prefix": "fs-next-middleware",
+    "prefix": "ps-next-middleware",
     "body": [
       "import { NextResponse } from 'next/server'",
       "import type { NextRequest } from 'next/server'",

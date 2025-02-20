@@ -1,6 +1,6 @@
 {
   "Wire Container": {
-    "prefix": "fs-go-wire-container",
+    "prefix": "ps-go-wire-container",
     "body": [
       "//go:build wireinject",
       "// +build wireinject",
@@ -35,7 +35,7 @@
   },
 
   "Wire Provider Set": {
-    "prefix": "fs-go-wire-provider-set",
+    "prefix": "ps-go-wire-provider-set",
     "body": [
       "package ${1:package}",
       "",
@@ -63,7 +63,7 @@
   },
 
   "Wire Provider Function": {
-    "prefix": "fs-go-wire-provider",
+    "prefix": "ps-go-wire-provider",
     "body": [
       "// Provide${1:Service} cria e retorna uma nova instância de ${1:Service}",
       "func Provide${1:Service}(",
@@ -90,7 +90,7 @@
   },
 
   "Wire Complete Setup": {
-    "prefix": "fs-go-wire-setup",
+    "prefix": "ps-go-wire-setup",
     "body": [
       "package di",
       "",
@@ -172,7 +172,7 @@
   },
 
   "Wire Options": {
-    "prefix": "fs-go-wire-options",
+    "prefix": "ps-go-wire-options",
     "body": [
       "// ${1:Service}Options contém as opções de configuração para ${1:Service}",
       "type ${1:Service}Options struct {",

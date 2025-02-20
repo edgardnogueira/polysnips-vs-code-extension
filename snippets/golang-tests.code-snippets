@@ -1,6 +1,6 @@
 {
   "Go Test Basic": {
-    "prefix": "fs-go-test-basic",
+    "prefix": "ps-go-test-basic",
     "body": [
       "func Test${1:FunctionName}(t *testing.T) {",
       "  // Arrange",
@@ -20,7 +20,7 @@
   },
 
   "Go Test Table Driven": {
-    "prefix": "fs-go-test-table",
+    "prefix": "ps-go-test-table",
     "body": [
       "func Test${1:FunctionName}(t *testing.T) {",
       "  tests := []struct {",
@@ -58,7 +58,7 @@
   },
 
   "Go Test Repository": {
-    "prefix": "fs-go-test-repository",
+    "prefix": "ps-go-test-repository",
     "body": [
       "func Test${1:Model}Repository(t *testing.T) {",
       "  // Setup do banco de teste",
@@ -116,7 +116,7 @@
   },
 
   "Go Test Service": {
-    "prefix": "fs-go-test-service",
+    "prefix": "ps-go-test-service",
     "body": [
       "func Test${1:Model}Service(t *testing.T) {",
       "  ctrl := gomock.NewController(t)",
@@ -181,7 +181,7 @@
   },
 
   "Go Mock Setup": {
-    "prefix": "fs-go-test-mock-setup",
+    "prefix": "ps-go-test-mock-setup",
     "body": [
       "//go:generate mockgen -source=${1:model}.go -destination=mocks/mock_${1:model}.go -package=mocks",
       "",
@@ -205,7 +205,7 @@
   },
 
   "Go Integration Test Setup": {
-    "prefix": "fs-go-test-integration-setup",
+    "prefix": "ps-go-test-integration-setup",
     "body": [
       "func setupIntegrationTest(t *testing.T) (*gorm.DB, func()) {",
       "  // Configuração do banco de teste",
@@ -236,7 +236,7 @@
   },
 
   "Go Benchmark Test": {
-    "prefix": "fs-go-test-benchmark",
+    "prefix": "ps-go-test-benchmark",
     "body": [
       "func Benchmark${1:FunctionName}(b *testing.B) {",
       "  // Setup",
@@ -255,7 +255,7 @@
   },
 
   "Go TestMain Setup": {
-    "prefix": "fs-go-test-main",
+    "prefix": "ps-go-test-main",
     "body": [
       "func TestMain(m *testing.M) {",
       "  // Setup global antes dos testes",
@@ -274,7 +274,7 @@
   },
 
   "Go HTTP Test": {
-    "prefix": "fs-go-test-http",
+    "prefix": "ps-go-test-http",
     "body": [
       "func Test${1:HandlerName}(t *testing.T) {",
       "  // Cria request de teste",

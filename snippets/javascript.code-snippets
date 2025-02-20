@@ -3,8 +3,8 @@
   // MANIPULAÇÃO DE ARRAYS
   // -------------------------------------------
 
-  "Map Array (fs-map)": {
-    "prefix": "fs-js-map",
+  "Map Array (ps-map)": {
+    "prefix": "ps-js-map",
     "body": [
       "const newArray = $1array.map(($2item, $3index) => {",
       "  return $4 // resultado para cada item",
@@ -13,8 +13,8 @@
     "description": "Cria um novo array mapeando cada item do array original"
   },
 
-  "Filter Array (fs-filter)": {
-    "prefix": "fs-js-filter",
+  "Filter Array (ps-filter)": {
+    "prefix": "ps-js-filter",
     "body": [
       "const filtered = $1array.filter(($2item, $3index) => {",
       "  return $4 // condição para manter o item",
@@ -23,8 +23,8 @@
     "description": "Filtra o array de acordo com a condição especificada"
   },
 
-  "Reduce Array (fs-reduce)": {
-    "prefix": "fs-js-reduce",
+  "Reduce Array (ps-reduce)": {
+    "prefix": "ps-js-reduce",
     "body": [
       "const result = $1array.reduce(($2acc, $3item, $4index) => {",
       "  return $5 // retorna o acumulador atualizado",
@@ -33,8 +33,8 @@
     "description": "Reduz o array a um valor único usando função acumuladora"
   },
 
-  "Find Array (fs-find)": {
-    "prefix": "fs-js-find",
+  "Find Array (ps-find)": {
+    "prefix": "ps-js-find",
     "body": [
       "const found = $1array.find(($2item) => {",
       "  return $3 // condição de busca",
@@ -43,8 +43,8 @@
     "description": "Retorna o primeiro item do array que satisfaz a condição"
   },
 
-  "ForEach Array (fs-foreach)": {
-    "prefix": "fs-js-foreach",
+  "ForEach Array (ps-foreach)": {
+    "prefix": "ps-js-foreach",
     "body": [
       "$1array.forEach(($2item, $3index) => {",
       "  $4 // ação para cada item",
@@ -57,8 +57,8 @@
   // MANIPULAÇÃO DE OBJETOS
   // -------------------------------------------
 
-  "Merge Objects (fs-merge-obj)": {
-    "prefix": "fs-js-merge-obj",
+  "Merge Objects (ps-merge-obj)": {
+    "prefix": "ps-js-merge-obj",
     "body": [
       "const merged = {",
       "  ...$1obj1,",
@@ -69,14 +69,14 @@
     "description": "Faz merge de dois (ou mais) objetos com o operador spread"
   },
 
-  "Destructure Object (fs-dest-obj)": {
-    "prefix": "fs-js-dest-obj",
+  "Destructure Object (ps-dest-obj)": {
+    "prefix": "ps-js-dest-obj",
     "body": ["const { $1prop1, $2prop2 } = $3obj;"],
     "description": "Exemplo de destruturação de objeto"
   },
 
-  "Object.entries() (fs-entries)": {
-    "prefix": "fs-js-entries",
+  "Object.entries() (ps-entries)": {
+    "prefix": "ps-js-entries",
     "body": [
       "Object.entries($1obj).forEach(([key, value]) => {",
       "  $2 // utilize key e value",
@@ -85,14 +85,14 @@
     "description": "Percorre todas as [chave, valor] do objeto"
   },
 
-  "Object.keys() (fs-keys)": {
-    "prefix": "fs-js-keys",
+  "Object.keys() (ps-keys)": {
+    "prefix": "ps-js-keys",
     "body": ["const keys = Object.keys($1obj);"],
     "description": "Pega todas as chaves do objeto em um array"
   },
 
-  "Object.values() (fs-values)": {
-    "prefix": "fs-js-values",
+  "Object.values() (ps-values)": {
+    "prefix": "ps-js-values",
     "body": ["const values = Object.values($1obj);"],
     "description": "Retorna todos os valores do objeto em um array"
   }
