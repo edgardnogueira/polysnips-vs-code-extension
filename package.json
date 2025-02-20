@@ -2,11 +2,11 @@
   "name": "polysnips",
   "displayName": "PolySnips vscode snippets",
   "description": "Snippets para desenvolvimento fullstack incluindo JavaScript, TypeScript, Go, PHP, Docker e mais",
-  "version": "0.0.11",
-  "publisher": "my-publisher-id",
+  "version": "0.0.12",
+  "publisher": "polysnips-vs-code-extension",
   "repository": {
     "type": "git",
-    "url": "https://github.com/edgardnogueira/vs-code-snippetss"
+    "url": "https://github.com/edgardnogueira/polysnips-vs-code-extension"
   },
   "keywords": [
     "snippets",
@@ -24,9 +24,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/edgardnogueira/vs-code-snippetss/issues"
+    "url": "https://github.com/edgardnogueira/polysnips-vs-code-extension/issues"
   },
-  "homepage": "https://github.com/edgardnogueira/vs-code-snippetss#readme",
+  "homepage": "https://github.com/edgardnogueira/polysnips-vs-code-extension#readme",
   "engines": {
     "vscode": "^1.96.0"
   },
