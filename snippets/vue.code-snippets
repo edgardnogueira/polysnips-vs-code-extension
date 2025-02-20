@@ -1,0 +1,266 @@
+{
+  // Vue 3 Component Structure
+  "Vue Component": {
+    "prefix": "ps-vue-component",
+    "body": [
+      "<script setup>",
+      "import { ref } from 'vue'",
+      "",
+      "// Props",
+      "const props = defineProps({",
+      "  ${1:propName}: {",
+      "    type: ${2|String,Number,Boolean,Array,Object,Function|},",
+      "    required: ${3|true,false|},",
+      "    default: ${4:null}",
+      "  }",
+      "})",
+      "",
+      "// Emits",
+      "const emit = defineEmits(['${5:eventName}'])",
+      "",
+      "// State",
+      "const ${6:state} = ref(${7:initialValue})",
+      "</script>",
+      "",
+      "<template>",
+      "  <div>",
+      "    ${8:<!-- Template content -->}",
+      "  </div>",
+      "</template>",
+      "",
+      "<style scoped>",
+      "${9:/* Component styles */}",
+      "</style>"
+    ],
+    "description": "Creates a Vue 3 component with script setup syntax"
+  },
+
+  // Vue Composable
+  "Vue Composable": {
+    "prefix": "ps-vue-composable",
+    "body": [
+      "import { ref, onMounted, onUnmounted } from 'vue'",
+      "",
+      "export function use${1:ComposableName}(${2:params}) {",
+      "  // State",
+      "  const ${3:state} = ref(${4:initialValue})",
+      "",
+      "  // Methods",
+      "  function ${5:methodName}() {",
+      "    ${6:// Method implementation}",
+      "  }",
+      "",
+      "  // Lifecycle hooks",
+      "  onMounted(() => {",
+      "    ${7:// Setup code}",
+      "  })",
+      "",
+      "  onUnmounted(() => {",
+      "    ${8:// Cleanup code}",
+      "  })",
+      "",
+      "  return {",
+      "    ${3:state},",
+      "    ${5:methodName}",
+      "  }",
+      "}"
+    ],
+    "description": "Creates a Vue 3 composable function"
+  },
+
+  // Vue Watch
+  "Vue Watch": {
+    "prefix": "ps-vue-watch",
+    "body": [
+      "watch(",
+      "  () => ${1:watchedValue},",
+      "  (newValue, oldValue) => {",
+      "    ${2:// Handler implementation}",
+      "  },",
+      "  {",
+      "    deep: ${3|true,false|},",
+      "    immediate: ${4|true,false|}",
+      "  }",
+      ")"
+    ],
+    "description": "Creates a Vue 3 watch effect"
+  },
+
+  // Vue WatchEffect
+  "Vue WatchEffect": {
+    "prefix": "ps-vue-watcheffect",
+    "body": [
+      "watchEffect(() => {",
+      "  // This will automatically track dependencies",
+      "  ${1:// Effect implementation}",
+      "})"
+    ],
+    "description": "Creates a Vue 3 watchEffect"
+  },
+
+  // Vue Lifecycle Hooks
+  "Vue Lifecycle Hooks": {
+    "prefix": "ps-vue-lifecycle",
+    "body": [
+      "// Mounted",
+      "onMounted(() => {",
+      "  ${1:// Component is mounted}",
+      "})",
+      "",
+      "// Updated",
+      "onUpdated(() => {",
+      "  ${2:// Component is updated}",
+      "})",
+      "",
+      "// Unmounted",
+      "onUnmounted(() => {",
+      "  ${3:// Component is unmounted}",
+      "})"
+    ],
+    "description": "Adds Vue 3 lifecycle hooks"
+  },
+
+  // Vue Computed
+  "Vue Computed": {
+    "prefix": "ps-vue-computed",
+    "body": [
+      "const ${1:computedValue} = computed(() => {",
+      "  return ${2:// Computation logic}",
+      "})"
+    ],
+    "description": "Creates a Vue 3 computed property"
+  },
+
+  // Vue Ref Declaration
+  "Vue Ref": {
+    "prefix": "ps-vue-ref",
+    "body": ["const ${1:refName} = ref(${2:initialValue})"],
+    "description": "Creates a Vue 3 ref"
+  },
+
+  // Vue Reactive Declaration
+  "Vue Reactive": {
+    "prefix": "ps-vue-reactive",
+    "body": [
+      "const ${1:stateName} = reactive({",
+      "  ${2:property}: ${3:value},",
+      "  ${4:property2}: ${5:value2}",
+      "})"
+    ],
+    "description": "Creates a Vue 3 reactive object"
+  },
+
+  // Vue Router Setup
+  "Vue Router Setup": {
+    "prefix": "ps-vue-router",
+    "body": [
+      "import { createRouter, createWebHistory } from 'vue-router'",
+      "",
+      "const routes = [",
+      "  {",
+      "    path: '/${1:path}',",
+      "    name: '${2:name}',",
+      "    component: () => import('${3:./components/Component.vue}')",
+      "  }",
+      "]",
+      "",
+      "const router = createRouter({",
+      "  history: createWebHistory(),",
+      "  routes",
+      "})",
+      "",
+      "export default router"
+    ],
+    "description": "Creates a Vue Router configuration"
+  },
+
+  // Vue Store (Pinia)
+  "Vue Pinia Store": {
+    "prefix": "ps-vue-store",
+    "body": [
+      "import { defineStore } from 'pinia'",
+      "",
+      "export const use${1:StoreName}Store = defineStore('${2:storeName}', {",
+      "  state: () => ({",
+      "    ${3:stateName}: ${4:initialValue}",
+      "  }),",
+      "",
+      "  getters: {",
+      "    ${5:getterName}: (state) => {",
+      "      return ${6:// Getter implementation}",
+      "    }",
+      "  },",
+      "",
+      "  actions: {",
+      "    ${7:actionName}() {",
+      "      ${8:// Action implementation}",
+      "    }",
+      "  }",
+      "})"
+    ],
+    "description": "Creates a Pinia store for Vue 3"
+  },
+
+  // Vue Template Ref
+  "Vue Template Ref": {
+    "prefix": "ps-vue-template-ref",
+    "body": [
+      "const ${1:elementRef} = ref(null)",
+      "",
+      "<template>",
+      "  <div ref=\"${1:elementRef}\">",
+      "    ${2:<!-- Content -->}",
+      "  </div>",
+      "</template>"
+    ],
+    "description": "Creates a template ref with setup"
+  },
+
+  // Vue Error Handling
+  "Vue Error Handler": {
+    "prefix": "ps-vue-error",
+    "body": [
+      "onErrorCaptured((err, instance, info) => {",
+      "  ${1:// Error handling logic}",
+      "  console.error('Error captured:', err)",
+      "  console.log('Component:', instance)",
+      "  console.log('Info:', info)",
+      "  return false // Prevent error from propagating",
+      "})"
+    ],
+    "description": "Adds Vue error handling"
+  },
+
+  // Vue Provide/Inject
+  "Vue Provide Inject": {
+    "prefix": "ps-vue-provide-inject",
+    "body": [
+      "// In parent component",
+      "const ${1:providedValue} = ref(${2:initialValue})",
+      "provide('${3:key}', ${1:providedValue})",
+      "",
+      "// In child component",
+      "const ${4:injectedValue} = inject('${3:key}')"
+    ],
+    "description": "Sets up Vue 3 provide/inject pattern"
+  },
+
+  // Vue Custom Directive
+  "Vue Custom Directive": {
+    "prefix": "ps-vue-directive",
+    "body": [
+      "const v${1:DirectiveName} = {",
+      "  mounted: (el, binding) => {",
+      "    ${2:// Directive logic when element is mounted}",
+      "  },",
+      "  updated: (el, binding) => {",
+      "    ${3:// Directive logic when element is updated}",
+      "  }",
+      "}",
+      "",
+      "// Register directive",
+      "app.directive('${4:directiveName}', v${1:DirectiveName})"
+    ],
+    "description": "Creates a Vue 3 custom directive"
+  }
+}
