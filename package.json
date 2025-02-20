@@ -2,7 +2,7 @@
   "name": "polysnips",
   "displayName": "PolySnips vscode snippets",
   "description": "Snippets para desenvolvimento fullstack incluindo JavaScript, TypeScript, Go, PHP, Docker e mais",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "publisher": "EdgardNogueira",
   "repository": {
     "type": "git",
