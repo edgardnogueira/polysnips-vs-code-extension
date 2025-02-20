@@ -1,7 +1,7 @@
 {
   // Test Suite
   "Jest Test Suite": {
-    "prefix": "fs-jest-desc",
+    "prefix": "ps-jest-desc",
     "body": [
       "describe('${1:Suite description}', () => {",
       "  ${2:// tests go here}",
@@ -12,7 +12,7 @@
 
   // Test Case
   "Jest Test Case": {
-    "prefix": "fs-jest-test",
+    "prefix": "ps-jest-test",
     "body": [
       "test('${1:should }', () => {",
       "  ${2:// test implementation}",
@@ -23,7 +23,7 @@
 
   // Test Case (it syntax)
   "Jest It Case": {
-    "prefix": "fs-jest-it",
+    "prefix": "ps-jest-it",
     "body": [
       "it('${1:should }', () => {",
       "  ${2:// test implementation}",
@@ -34,21 +34,21 @@
 
   // beforeEach hook
   "Jest beforeEach": {
-    "prefix": "fs-jest-before-each",
+    "prefix": "ps-jest-before-each",
     "body": ["beforeEach(() => {", "  ${1:// setup code}", "});"],
     "description": "Adiciona hook beforeEach"
   },
 
   // afterEach hook
   "Jest afterEach": {
-    "prefix": "fs-jest-after-each",
+    "prefix": "ps-jest-after-each",
     "body": ["afterEach(() => {", "  ${1:// cleanup code}", "});"],
     "description": "Adiciona hook afterEach"
   },
 
   // Mock Function
   "Jest Mock Function": {
-    "prefix": "fs-jest-mock-fn",
+    "prefix": "ps-jest-mock-fn",
     "body": [
       "const ${1:mockName} = jest.fn(${2:()} => {",
       "  ${3:return ${4:value}}",
@@ -59,14 +59,14 @@
 
   // Spy On
   "Jest Spy On": {
-    "prefix": "fs-jest-spy",
+    "prefix": "ps-jest-spy",
     "body": ["jest.spyOn(${1:object}, '${2:method}')"],
     "description": "Cria um spy em um método"
   },
 
   // Common Expects
   "Jest Expect Common": {
-    "prefix": "fs-jest-expect",
+    "prefix": "ps-jest-expect",
     "body": [
       "expect(${1:value}).${2|toBe,toEqual,toBeDefined,toBeTruthy,toBeFalsy,toBeNull,toBeUndefined,toContain,toHaveLength,toHaveBeenCalled,toHaveBeenCalledWith,toHaveBeenCalledTimes|}(${3:expected});"
     ],
@@ -75,7 +75,7 @@
 
   // Mock Implementation
   "Jest Mock Implementation": {
-    "prefix": "fs-jest-mock-impl",
+    "prefix": "ps-jest-mock-impl",
     "body": [
       "jest.mock('${1:module}', () => ({",
       "  ${2:exportedFunction}: jest.fn(${3:() => ${4:mockReturn}})",
@@ -86,7 +86,7 @@
 
   // Complete Test Example
   "Jest Complete Test": {
-    "prefix": "fs-jest-complete",
+    "prefix": "ps-jest-complete",
     "body": [
       "describe('${1:Component/Function name}', () => {",
       "  let ${2:testVariable};",

@@ -1,7 +1,7 @@
 {
   // Dockerfile básico
   "Basic Dockerfile": {
-    "prefix": "fs-docker-basic",
+    "prefix": "ps-docker-basic",
     "body": [
       "FROM ${1:node:latest}",
       "",
@@ -22,7 +22,7 @@
 
   // Docker Compose básico
   "Basic Docker Compose": {
-    "prefix": "fs-docker-compose",
+    "prefix": "ps-docker-compose",
     "body": [
       "version: '3.8'",
       "",
@@ -44,7 +44,7 @@
 
   // Multi-stage build
   "Multi-stage Dockerfile": {
-    "prefix": "fs-docker-multistage",
+    "prefix": "ps-docker-multistage",
     "body": [
       "# Build stage",
       "FROM ${1:node:latest} as builder",
@@ -76,7 +76,7 @@
 
   // Docker Volume
   "Docker Volume": {
-    "prefix": "fs-docker-volume",
+    "prefix": "ps-docker-volume",
     "body": [
       "volumes:",
       "  ${1:volume_name}:",
@@ -91,7 +91,7 @@
 
   // Docker Network
   "Docker Network": {
-    "prefix": "fs-docker-network",
+    "prefix": "ps-docker-network",
     "body": [
       "networks:",
       "  ${1:network_name}:",
@@ -106,7 +106,7 @@
 
   // Docker Healthcheck
   "Docker Healthcheck": {
-    "prefix": "fs-docker-healthcheck",
+    "prefix": "ps-docker-healthcheck",
     "body": [
       "HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \\",
       "  CMD ${1:curl -f http://localhost:3000/health || exit 1}"
@@ -116,7 +116,7 @@
 
   // Docker Environment Variables
   "Docker Environment": {
-    "prefix": "fs-docker-env",
+    "prefix": "ps-docker-env",
     "body": [
       "environment:",
       "  - ${1:ENV_NAME}=${2:value}",
@@ -127,7 +127,7 @@
 
   // Docker Service Dependencies
   "Docker Depends On": {
-    "prefix": "fs-docker-depends",
+    "prefix": "ps-docker-depends",
     "body": [
       "depends_on:",
       "  ${1:service_name}:",

@@ -1,7 +1,7 @@
 {
   // Select básico
   "SQL Select": {
-    "prefix": "fs-sql-select",
+    "prefix": "ps-sql-select",
     "body": [
       "SELECT ${1:columns}",
       "FROM ${2:table_name}",
@@ -12,7 +12,7 @@
 
   // Insert
   "SQL Insert": {
-    "prefix": "fs-sql-insert",
+    "prefix": "ps-sql-insert",
     "body": [
       "INSERT INTO ${1:table_name} (${2:columns})",
       "VALUES (${3:values});"
@@ -22,7 +22,7 @@
 
   // Update
   "SQL Update": {
-    "prefix": "fs-sql-update",
+    "prefix": "ps-sql-update",
     "body": [
       "UPDATE ${1:table_name}",
       "SET ${2:column} = ${3:value}",
@@ -33,14 +33,14 @@
 
   // Delete
   "SQL Delete": {
-    "prefix": "fs-sql-delete",
+    "prefix": "ps-sql-delete",
     "body": ["DELETE FROM ${1:table_name}", "WHERE ${2:condition};"],
     "description": "Query DELETE básica"
   },
 
   // Join
   "SQL Join": {
-    "prefix": "fs-sql-join",
+    "prefix": "ps-sql-join",
     "body": [
       "SELECT ${1:columns}",
       "FROM ${2:table1}",
@@ -53,7 +53,7 @@
 
   // Create Table
   "SQL Create Table": {
-    "prefix": "fs-sql-create-table",
+    "prefix": "ps-sql-create-table",
     "body": [
       "CREATE TABLE ${1:table_name} (",
       "  ${2:id} ${3|INT,VARCHAR(255),TEXT,BOOLEAN,TIMESTAMP,DECIMAL|} ${4|PRIMARY KEY,NOT NULL,NULL,UNIQUE|},",
@@ -67,7 +67,7 @@
 
   // Index
   "SQL Create Index": {
-    "prefix": "fs-sql-index",
+    "prefix": "ps-sql-index",
     "body": [
       "CREATE ${1|INDEX,UNIQUE INDEX|} ${2:index_name}",
       "ON ${3:table_name} (${4:column_name});"
@@ -77,7 +77,7 @@
 
   // Common Table Expression (CTE)
   "SQL CTE": {
-    "prefix": "fs-sql-cte",
+    "prefix": "ps-sql-cte",
     "body": [
       "WITH ${1:cte_name} AS (",
       "  SELECT ${2:columns}",
@@ -93,7 +93,7 @@
 
   // Stored Procedure
   "SQL Stored Procedure": {
-    "prefix": "fs-sql-procedure",
+    "prefix": "ps-sql-procedure",
     "body": [
       "CREATE PROCEDURE ${1:procedure_name} (",
       "  ${2:parameter_name} ${3|IN,OUT,INOUT|} ${4|INT,VARCHAR(255),TEXT,BOOLEAN,TIMESTAMP,DECIMAL|}",
@@ -107,7 +107,7 @@
 
   // Trigger
   "SQL Trigger": {
-    "prefix": "fs-sql-trigger",
+    "prefix": "ps-sql-trigger",
     "body": [
       "CREATE TRIGGER ${1:trigger_name}",
       "${2|BEFORE,AFTER|} ${3|INSERT,UPDATE,DELETE|}",
@@ -122,7 +122,7 @@
 
   // Group By com Having
   "SQL Group By": {
-    "prefix": "fs-sql-group",
+    "prefix": "ps-sql-group",
     "body": [
       "SELECT ${1:columns}, ${2:aggregate_function}(${3:column})",
       "FROM ${4:table_name}",

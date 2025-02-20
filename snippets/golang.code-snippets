@@ -1,7 +1,7 @@
 {
   // Snippet 1: Arquivo main com função principal
   "Go Main Function": {
-    "prefix": "fs-go-main",
+    "prefix": "ps-go-main",
     "body": [
       "package main",
       "",
@@ -18,7 +18,7 @@
 
   // Snippet 2: Teste básico com a biblioteca 'testing'
   "Go Testing Function": {
-    "prefix": "fs-go-test",
+    "prefix": "ps-go-test",
     "body": [
       "package $1",
       "",
@@ -38,7 +38,7 @@
 
   // Snippet 3: Declaração de struct
   "Go Struct": {
-    "prefix": "fs-go-struct",
+    "prefix": "ps-go-struct",
     "body": [
       "type $1 struct {",
       "  $2 string",
@@ -51,7 +51,7 @@
 
   // Snippet 4: Método de struct
   "Go Struct Method": {
-    "prefix": "fs-go-method",
+    "prefix": "ps-go-method",
     "body": [
       "func (s *$1) $2() $3 {",
       "  // Implementação do método",
@@ -63,7 +63,7 @@
 
   // Snippet 5: Inicialização de slice e loop
   "Go Slice & Range": {
-    "prefix": "fs-go-range",
+    "prefix": "ps-go-range",
     "body": [
       "$1 := []$2{",
       "  $3",
@@ -78,49 +78,49 @@
   },
   // Snippet para fmt.Printf com formatação
   "Go fmt.Printf": {
-    "prefix": "fs-go-printf",
+    "prefix": "ps-go-printf",
     "body": ["fmt.Printf(\"$1: %$2\\n\", $3)"],
     "description": "Insere fmt.Printf com placeholder para formatação"
   },
 
   // Snippet para fmt.Sprintf
   "Go fmt.Sprintf": {
-    "prefix": "fs-go-sprintf",
+    "prefix": "ps-go-sprintf",
     "body": ["formatted := fmt.Sprintf(\"$1: %$2\", $3)"],
     "description": "Cria uma string formatada usando fmt.Sprintf"
   },
 
   // Snippet para fmt.Errorf
   "Go fmt.Errorf": {
-    "prefix": "fs-go-errorf",
+    "prefix": "ps-go-errorf",
     "body": ["err := fmt.Errorf(\"$1: %$2\", $3)"],
     "description": "Cria um erro formatado usando fmt.Errorf"
   },
 
   // Snippet para slog.Info
   "Go slog.Info": {
-    "prefix": "fs-go-slog-info",
+    "prefix": "ps-go-slog-info",
     "body": ["slog.Info(\"$1\", \"$2\", $3)"],
     "description": "Log de informação usando slog.Info"
   },
 
   // Snippet para slog.Error
   "Go slog.Error": {
-    "prefix": "fs-go-slog-error",
+    "prefix": "ps-go-slog-error",
     "body": ["slog.Error(\"$1\", \"error\", err$2)"],
     "description": "Log de erro usando slog.Error"
   },
 
   // Snippet para slog.Debug
   "Go slog.Debug": {
-    "prefix": "fs-go-slog-debug",
+    "prefix": "ps-go-slog-debug",
     "body": ["slog.Debug(\"$1\", \"$2\", $3)"],
     "description": "Log de debug usando slog.Debug"
   },
 
   // Snippet para configuração do slog
   "Go slog Setup": {
-    "prefix": "fs-go-slog-setup",
+    "prefix": "ps-go-slog-setup",
     "body": [
       "logger := slog.New(slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{",
       "  Level: slog.Level$1,       // Debug, Info, Warn, Error",
@@ -133,12 +133,12 @@
 
   // Snippet para fmt.Scan
   "Go fmt.Scan": {
-    "prefix": "fs-go-scan",
+    "prefix": "ps-go-scan",
     "body": ["var $1 $2", "fmt.Scan(&$1)"],
     "description": "Lê entrada do usuário usando fmt.Scan"
   },
   "Go Interface": {
-    "prefix": "fs-go-interface",
+    "prefix": "ps-go-interface",
     "body": [
       "type $1 interface {",
       "  $2($3) $4",
@@ -150,7 +150,7 @@
   },
   // Snippets GORM
   "GORM Model": {
-    "prefix": "fs-go-gorm-model",
+    "prefix": "ps-go-gorm-model",
     "body": [
       "type ${1:ModelName} struct {",
       "  gorm.Model",
@@ -162,7 +162,7 @@
   },
 
   "GORM DB Connection": {
-    "prefix": "fs-go-gorm-connect",
+    "prefix": "ps-go-gorm-connect",
     "body": [
       "dsn := \"${1:host=${2:localhost} user=${3:postgres} password=${4:password} dbname=${5:dbname} port=${6:5432} sslmode=disable}\"",
       "db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})",
@@ -189,7 +189,7 @@
   },
 
   "GORM Create": {
-    "prefix": "fs-go-gorm-create",
+    "prefix": "ps-go-gorm-create",
     "body": [
       "${1:record} := &${2:Model}{",
       "  ${3:Field}: ${4:value},",
@@ -204,7 +204,7 @@
   },
 
   "GORM Find": {
-    "prefix": "fs-go-gorm-find",
+    "prefix": "ps-go-gorm-find",
     "body": [
       "var ${1:records} []${2:Model}",
       "result := db.Find(&${1:records})",
@@ -216,7 +216,7 @@
   },
 
   "GORM Find One": {
-    "prefix": "fs-go-gorm-find-one",
+    "prefix": "ps-go-gorm-find-one",
     "body": [
       "var ${1:record} ${2:Model}",
       "result := db.Where(\"${3:field} = ?\", ${4:value}).First(&${1:record})",
@@ -228,7 +228,7 @@
   },
 
   "GORM Update": {
-    "prefix": "fs-go-gorm-update",
+    "prefix": "ps-go-gorm-update",
     "body": [
       "result := db.Model(&${1:record}).Updates(${2:Model}{",
       "  ${3:Field}: ${4:value},",
@@ -241,7 +241,7 @@
   },
 
   "GORM Delete": {
-    "prefix": "fs-go-gorm-delete",
+    "prefix": "ps-go-gorm-delete",
     "body": [
       "result := db.Delete(&${1:Model}{}, ${2:1})",
       "if result.Error != nil {",
@@ -252,7 +252,7 @@
   },
 
   "GORM Transaction": {
-    "prefix": "fs-go-gorm-transaction",
+    "prefix": "ps-go-gorm-transaction",
     "body": [
       "err := db.Transaction(func(tx *gorm.DB) error {",
       "  // Operações dentro da transação",
@@ -275,7 +275,7 @@
   },
 
   "GORM Preload": {
-    "prefix": "fs-go-gorm-preload",
+    "prefix": "ps-go-gorm-preload",
     "body": [
       "var ${1:records} []${2:Model}",
       "result := db.Preload(\"${3:Association}\").Find(&${1:records})",
@@ -287,7 +287,7 @@
   },
 
   "GORM Migration": {
-    "prefix": "fs-go-gorm-migrate",
+    "prefix": "ps-go-gorm-migrate",
     "body": [
       "// Auto Migrate",
       "err := db.AutoMigrate(",
@@ -302,7 +302,7 @@
   },
 
   "GORM Repository": {
-    "prefix": "fs-go-gorm-repository",
+    "prefix": "ps-go-gorm-repository",
     "body": [
       "type ${1:Model}Repository struct {",
       "  db *gorm.DB",
@@ -366,7 +366,7 @@
   },
 
   "GORM Complex Query": {
-    "prefix": "fs-go-gorm-complex",
+    "prefix": "ps-go-gorm-complex",
     "body": [
       "result := db.Where(\"${1:field} = ?\", ${2:value}).",
       "           Or(\"${3:other_field} = ?\", ${4:other_value}).",
@@ -386,7 +386,7 @@
   },
 
   "GORM Join Query": {
-    "prefix": "fs-go-gorm-join",
+    "prefix": "ps-go-gorm-join",
     "body": [
       "result := db.Model(&${1:Model}{}).",
       "           Joins(\"JOIN ${2:other_table} ON ${3:condition}\").",
@@ -401,7 +401,7 @@
   },
 
   "GORM OR Conditions": {
-    "prefix": "fs-go-gorm-or",
+    "prefix": "ps-go-gorm-or",
     "body": [
       "result := db.Where(\"${1:field1} = ?\", ${2:value1}).",
       "           Or(\"${3:field2} = ?\", ${4:value2}).",
@@ -415,7 +415,7 @@
   },
 
   "GORM Like Query": {
-    "prefix": "fs-go-gorm-like",
+    "prefix": "ps-go-gorm-like",
     "body": [
       "result := db.Where(\"${1:field} LIKE ?\", \"%${2:pattern}%\").",
       "           Find(&${3:records})",
@@ -428,7 +428,7 @@
   },
 
   "GORM Group By": {
-    "prefix": "fs-go-gorm-group",
+    "prefix": "ps-go-gorm-group",
     "body": [
       "type Result struct {",
       "  ${1:Field} ${2:string}",
@@ -449,7 +449,7 @@
     "description": "Cria uma consulta com GROUP BY e HAVING usando GORM"
   }
 "GORM Repository Interface": {
-    "prefix": "fs-go-gorm-repository-interface",
+    "prefix": "ps-go-gorm-repository-interface",
     "body": [
       "type ${1:Model}Repository interface {",
       "  Create(${2:model} *${1:Model}) error",
@@ -467,7 +467,7 @@
   },
 
   "GORM Service Interface": {
-    "prefix": "fs-go-gorm-service-interface",
+    "prefix": "ps-go-gorm-service-interface",
     "body": [
       "type ${1:Model}Service interface {",
       "  Create(ctx context.Context, ${2:model} *${1:Model}) error",
@@ -481,7 +481,7 @@
   },
 
   "GORM Service Implementation": {
-    "prefix": "fs-go-gorm-service-impl",
+    "prefix": "ps-go-gorm-service-impl",
     "body": [
       "type ${1:Model}ServiceImpl struct {",
       "  repo ${1:Model}Repository",
