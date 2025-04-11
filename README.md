@@ -1,11 +1,12 @@
 # FullStack VSCode Snippets
 
-Uma coleção abrangente de snippets para desenvolvimento full-stack, incluindo JavaScript, Next.js, Go, PHP, Docker e mais.
+Uma coleção abrangente de snippets para desenvolvimento full-stack, incluindo JavaScript, Next.js, Python, Go, PHP, Docker e mais.
 
 ## Características
 
 - JavaScript/TypeScript snippets para manipulação de arrays e objetos
 - Next.js snippets para páginas, rotas API e data fetching
+- Python snippets para estruturas básicas, manipulação de dados, testes e frameworks web
 - Go snippets para estruturas comuns, GORM, repositories e services
 - Testes em Go com suporte a unit tests, integration tests e mocks
 - PHP snippets para operações básicas e OOP
@@ -37,34 +38,58 @@ npm run install-extension fullstack-snippets-0.0.6.vsix
 
 ### JavaScript/TypeScript
 
-| Prefixo           | Descrição                       |
-| ----------------- | ------------------------------- |
-| `ps-js-map`       | Cria um novo array usando map   |
-| `ps-js-filter`    | Filtra elementos do array       |
-| `ps-js-reduce`    | Reduz array para um único valor |
-| `ps-js-find`      | Encontra um elemento no array   |
-| `ps-js-foreach`   | Itera sobre elementos do array  |
-| `ps-js-merge-obj` | Mescla objetos usando spread    |
-| `ps-js-dest-obj`  | Desestruturação de objeto       |
+| Prefixo           | Descrição                      |
+| ----------------- | ------------------------------ |
+| `ps-js-map`       | Cria um novo array usando map  |
+| `ps-js-filter`    | Filtra elementos do array      |
+| `ps-js-reduce`    | Redux array para um único valor |
+| `ps-js-find`      | Encontra um elemento no array  |
+| `ps-js-foreach`   | Itera sobre elementos do array |
+| `ps-js-merge-obj` | Mescla objetos usando spread   |
+| `ps-js-dest-obj`  | Desestruturação de objeto      |
+
+### Python
+
+| Prefixo               | Descrição                           |
+| --------------------- | ----------------------------------- |
+| `ps-py-main`          | Cria bloco principal (main)         |
+| `ps-py-class`         | Cria esqueleto de classe            |
+| `ps-py-func`          | Cria função com docstring           |
+| `ps-py-lambda`        | Cria função lambda                  |
+| `ps-py-listcomp`      | List comprehension                  |
+| `ps-py-dictcomp`      | Dict comprehension                  |
+| `ps-py-setcomp`       | Set comprehension                   |
+| `ps-py-try`           | Bloco try-except(-finally)          |
+| `ps-py-import`        | Import simples                      |
+| `ps-py-fromimport`    | Import from específico              |
+| `ps-py-pytest`        | Função de teste usando pytest       |
+| `ps-py-unittest`      | Classe de teste usando unittest     |
+| `ps-py-numpy`         | Import NumPy                        |
+| `ps-py-pandas`        | Import Pandas                       |
+| `ps-py-matplotlib`    | Import Matplotlib                   |
+| `ps-py-dataframe`     | Criar DataFrame do Pandas           |
+| `ps-py-flask`         | Aplicativo Flask básico             |
+| `ps-py-fastapi`       | Aplicativo FastAPI básico           |
+| `ps-py-requests`      | Exemplo de uso da biblioteca requests |
 
 ### Go - Básico
 
-| Prefixo           | Descrição                   |
-| ----------------- | --------------------------- |
-| `ps-go-main`      | Cria função main            |
-| `ps-go-test`      | Cria função de teste        |
-| `ps-go-struct`    | Cria uma struct             |
+| Prefixo           | Descrição                  |
+| ----------------- | -------------------------- |
+| `ps-go-main`      | Cria função main           |
+| `ps-go-test`      | Cria função de teste       |
+| `ps-go-struct`    | Cria uma struct            |
 | `ps-go-method`    | Adiciona um método a struct |
-| `ps-go-interface` | Cria uma interface          |
-| `ps-go-range`     | Cria slice e loop range     |
+| `ps-go-interface` | Cria uma interface         |
+| `ps-go-range`     | Cria slice e loop range    |
 
 ### Go - GORM & Database
 
-| Prefixo                           | Descrição                     |
-| --------------------------------- | ----------------------------- |
-| `ps-go-gorm-model`                | Cria model do GORM            |
-| `ps-go-gorm-connect`              | Configuração de conexão       |
-| `ps-go-gorm-repository`           | Cria repository completo      |
+| Prefixo                         | Descrição                     |
+| ------------------------------- | ----------------------------- |
+| `ps-go-gorm-model`              | Cria model do GORM            |
+| `ps-go-gorm-connect`            | Configuração de conexão       |
+| `ps-go-gorm-repository`         | Cria repository completo      |
 | `ps-go-gorm-repository-interface` | Cria interface do repository  |
 | `ps-go-gorm-service-interface`    | Cria interface do service     |
 | `ps-go-gorm-service-impl`         | Cria implementação do service |
@@ -74,16 +99,16 @@ npm run install-extension fullstack-snippets-0.0.6.vsix
 
 ### Go - Testes
 
-| Prefixo                        | Descrição                         |
-| ------------------------------ | --------------------------------- |
-| `ps-go-test-basic`             | Teste básico (Arrange-Act-Assert) |
-| `ps-go-test-table`             | Teste table-driven                |
-| `ps-go-test-repository`        | Testes para repository            |
-| `ps-go-test-service`           | Testes para service com mocks     |
-| `ps-go-test-mock-setup`        | Setup para testes com mock        |
+| Prefixo                      | Descrição                        |
+| ---------------------------- | -------------------------------- |
+| `ps-go-test-basic`           | Teste básico (Arrange-Act-Assert) |
+| `ps-go-test-table`           | Teste table-driven               |
+| `ps-go-test-repository`      | Testes para repository           |
+| `ps-go-test-service`         | Testes para service com mocks    |
+| `ps-go-test-mock-setup`      | Setup para testes com mock       |
 | `ps-go-test-integration-setup` | Setup para testes de integração   |
-| `ps-go-test-benchmark`         | Teste de benchmark                |
-| `ps-go-test-http`              | Teste para HTTP handler           |
+| `ps-go-test-benchmark`       | Teste de benchmark               |
+| `ps-go-test-http`            | Teste para HTTP handler          |
 
 ### PHP
 
@@ -98,27 +123,56 @@ npm run install-extension fullstack-snippets-0.0.6.vsix
 
 ### Docker
 
-| Prefixo                 | Descrição                   |
-| ----------------------- | --------------------------- |
-| `ps-docker-basic`       | Dockerfile básico           |
-| `ps-docker-compose`     | Configuração docker-compose |
-| `ps-docker-multistage`  | Dockerfile multi-stage      |
-| `ps-docker-volume`      | Configuração de volume      |
-| `ps-docker-network`     | Configuração de rede        |
-| `ps-docker-healthcheck` | Healthcheck do Docker       |
+| Prefixo                  | Descrição                   |
+| ------------------------ | --------------------------- |
+| `ps-docker-basic`        | Dockerfile básico           |
+| `ps-docker-compose`      | Configuração docker-compose |
+| `ps-docker-multistage`   | Dockerfile multi-stage      |
+| `ps-docker-volume`       | Configuração de volume      |
+| `ps-docker-network`      | Configuração de rede        |
+| `ps-docker-healthcheck`  | Healthcheck do Docker       |
 
 ### SQL
 
-| Prefixo         | Descrição           |
-| --------------- | ------------------- |
-| `ps-sql-select` | Query SELECT        |
-| `ps-sql-insert` | Query INSERT        |
-| `ps-sql-update` | Query UPDATE        |
-| `ps-sql-delete` | Query DELETE        |
-| `ps-sql-join`   | Query com JOIN      |
-| `ps-sql-group`  | GROUP BY com HAVING |
+| Prefixo         | Descrição             |
+| --------------- | --------------------- |
+| `ps-sql-select` | Query SELECT          |
+| `ps-sql-insert` | Query INSERT          |
+| `ps-sql-update` | Query UPDATE          |
+| `ps-sql-delete` | Query DELETE          |
+| `ps-sql-join`   | Query com JOIN        |
+| `ps-sql-group`  | GROUP BY com HAVING   |
 
 ## Exemplos de Uso
+
+### Python Flask API
+
+```python
+# Digite: ps-py-flask
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+
+@app.route('/api/users', methods=['GET'])
+def get_users():
+    # implementação da função
+    return jsonify({"users": []})
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+### Python List Comprehension e Lambda
+
+```python
+# Digite: ps-py-listcomp
+filtered_data = [x * 2 for x in data if x > 0]
+
+# Digite: ps-py-lambda
+transform = lambda x: x.strip().lower()
+```
 
 ### Go GORM Repository e Service
 
@@ -210,8 +264,12 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para d
 
 ## Notas de Release
 
-### 0.0.6
+### 0.0.15
+- Adicionado suporte para snippets Python
+- Incluído exemplos de uso para Python
+- Atualizada a documentação
 
+### 0.0.14
 - Adicionado snippets de testes para Go
 - Adicionado suporte a GORM com repository/service pattern
 - Adicionado snippets Docker e SQL
