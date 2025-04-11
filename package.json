@@ -1,7 +1,7 @@
 {
   "name": "polysnips",
   "displayName": "PolySnips vscode snippets",
-  "description": "Snippets para desenvolvimento fullstack incluindo JavaScript, TypeScript, Go, PHP, Docker e mais",
+  "description": "Snippets para desenvolvimento fullstack incluindo JavaScript, TypeScript, Python, Go, PHP, Docker e mais",
   "version": "0.0.14",
   "publisher": "EdgardNogueira",
   "repository": {
@@ -12,6 +12,7 @@
     "snippets",
     "javascript",
     "typescript",
+    "python",
     "go",
     "php",
     "docker",
@@ -92,6 +93,10 @@
       {
         "language": "vue",
         "path": "./snippets/vue.code-snippets"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python.code-snippets"
       }
     ]
   },
