@@ -1,0 +1,276 @@
+{
+  // ---------------------------------
+  // ESTRUTURA BÁSICA
+  // ---------------------------------
+
+  "Python Main Block (ps-py-main)": {
+    "prefix": "ps-py-main",
+    "body": [
+      "def main():",
+      "    $1",
+      "",
+      "",
+      "if __name__ == \"__main__\":",
+      "    main()"
+    ],
+    "description": "Cria um bloco principal (main) para execução de código Python"
+  },
+
+  "Python Class (ps-py-class)": {
+    "prefix": "ps-py-class",
+    "body": [
+      "class ${1:ClassName}:",
+      "    def __init__(self${2:, args}):",
+      "        ${3:# inicialização}",
+      "        $4",
+      "",
+      "    def ${5:method_name}(self${6:, args}):",
+      "        ${7:# implementação do método}",
+      "        $8"
+    ],
+    "description": "Cria o esqueleto de uma classe Python"
+  },
+
+  "Python Function (ps-py-func)": {
+    "prefix": "ps-py-func",
+    "body": [
+      "def ${1:function_name}(${2:args}):",
+      "    \"\"\"",
+      "    ${3:Descrição da função}",
+      "    ",
+      "    ${4:Args:}",
+      "        ${5:param1: Descrição do parâmetro 1}",
+      "    ${6:Returns:}",
+      "        ${7:Descrição do retorno}",
+      "    \"\"\"",
+      "    ${8:pass}"
+    ],
+    "description": "Cria uma função Python com docstring"
+  },
+
+  "Python Lambda (ps-py-lambda)": {
+    "prefix": "ps-py-lambda",
+    "body": [
+      "${1:name} = lambda ${2:args}: ${3:expression}"
+    ],
+    "description": "Cria uma função lambda (anônima) em Python"
+  },
+
+  // ---------------------------------
+  // MANIPULAÇÃO DE DADOS
+  // ---------------------------------
+
+  "Python List Comprehension (ps-py-listcomp)": {
+    "prefix": "ps-py-listcomp",
+    "body": [
+      "${1:new_list} = [${2:expression} for ${3:item} in ${4:iterable}${5: if ${6:condition}}]"
+    ],
+    "description": "Cria uma list comprehension em Python"
+  },
+
+  "Python Dict Comprehension (ps-py-dictcomp)": {
+    "prefix": "ps-py-dictcomp",
+    "body": [
+      "${1:new_dict} = {${2:key}: ${3:value} for ${4:item} in ${5:iterable}${6: if ${7:condition}}}"
+    ],
+    "description": "Cria uma dict comprehension em Python"
+  },
+
+  "Python Set Comprehension (ps-py-setcomp)": {
+    "prefix": "ps-py-setcomp",
+    "body": [
+      "${1:new_set} = {${2:expression} for ${3:item} in ${4:iterable}${5: if ${6:condition}}}"
+    ],
+    "description": "Cria uma set comprehension em Python"
+  },
+
+  "Python Try-Except (ps-py-try)": {
+    "prefix": "ps-py-try",
+    "body": [
+      "try:",
+      "    ${1:# código que pode gerar exceção}",
+      "    $2",
+      "except ${3:Exception} as ${4:e}:",
+      "    ${5:# tratamento da exceção}",
+      "    $6",
+      "${7:finally:",
+      "    ${8:# código executado sempre}",
+      "    $9}"
+    ],
+    "description": "Cria um bloco try-except(-finally) em Python"
+  },
+
+  // ---------------------------------
+  // MÓDULOS E IMPORTS
+  // ---------------------------------
+
+  "Python Import (ps-py-import)": {
+    "prefix": "ps-py-import",
+    "body": [
+      "import ${1:module}"
+    ],
+    "description": "Importa um módulo em Python"
+  },
+
+  "Python From Import (ps-py-fromimport)": {
+    "prefix": "ps-py-fromimport",
+    "body": [
+      "from ${1:module} import ${2:object}"
+    ],
+    "description": "Importa um objeto específico de um módulo em Python"
+  },
+
+  // ---------------------------------
+  // DATA SCIENCE & ANALYSIS
+  // ---------------------------------
+
+  "Python NumPy Import (ps-py-numpy)": {
+    "prefix": "ps-py-numpy",
+    "body": [
+      "import numpy as np"
+    ],
+    "description": "Importa NumPy com alias padrão"
+  },
+
+  "Python Pandas Import (ps-py-pandas)": {
+    "prefix": "ps-py-pandas",
+    "body": [
+      "import pandas as pd"
+    ],
+    "description": "Importa Pandas com alias padrão"
+  },
+
+  "Python Matplotlib Import (ps-py-matplotlib)": {
+    "prefix": "ps-py-matplotlib",
+    "body": [
+      "import matplotlib.pyplot as plt"
+    ],
+    "description": "Importa Matplotlib com alias padrão"
+  },
+
+  "Python Pandas DataFrame (ps-py-dataframe)": {
+    "prefix": "ps-py-dataframe",
+    "body": [
+      "${1:df} = pd.DataFrame(${2:data}${3:, columns=[${4:cols}]})"
+    ],
+    "description": "Cria um DataFrame do Pandas"
+  },
+
+  // ---------------------------------
+  // TESTES
+  // ---------------------------------
+
+  "Python pytest Function (ps-py-pytest)": {
+    "prefix": "ps-py-pytest",
+    "body": [
+      "def test_${1:function_name}():",
+      "    ${2:# Arrange}",
+      "    ${3:# preparação dos dados}",
+      "    ",
+      "    ${4:# Act}",
+      "    ${5:# execução da função a ser testada}",
+      "    ",
+      "    ${6:# Assert}",
+      "    ${7:# verificação dos resultados}"
+    ],
+    "description": "Cria uma função de teste usando pytest"
+  },
+
+  "Python unittest Class (ps-py-unittest)": {
+    "prefix": "ps-py-unittest",
+    "body": [
+      "import unittest",
+      "",
+      "",
+      "class Test${1:ClassName}(unittest.TestCase):",
+      "    ",
+      "    def setUp(self):",
+      "        ${2:# preparação antes de cada teste}",
+      "        ${3:pass}",
+      "    ",
+      "    def tearDown(self):",
+      "        ${4:# limpeza após cada teste}",
+      "        ${5:pass}",
+      "    ",
+      "    def test_${6:function_name}(self):",
+      "        ${7:# código do teste}",
+      "        ${8:self.assertEqual(actual, expected)}",
+      "",
+      "",
+      "if __name__ == '__main__':",
+      "    unittest.main()"
+    ],
+    "description": "Cria uma classe de teste usando unittest"
+  },
+
+  // ---------------------------------
+  // WEB & API
+  // ---------------------------------
+
+  "Python Flask App (ps-py-flask)": {
+    "prefix": "ps-py-flask",
+    "body": [
+      "from flask import Flask, request, jsonify",
+      "",
+      "app = Flask(__name__)",
+      "",
+      "",
+      "@app.route('/${1:endpoint}', methods=['${2:GET}'])",
+      "def ${3:function_name}():",
+      "    ${4:# implementação da função}",
+      "    return jsonify(${5:{\"message\": \"Success\"}})",
+      "",
+      "",
+      "if __name__ == '__main__':",
+      "    app.run(debug=True)"
+    ],
+    "description": "Cria um aplicativo Flask básico"
+  },
+
+  "Python FastAPI App (ps-py-fastapi)": {
+    "prefix": "ps-py-fastapi",
+    "body": [
+      "from fastapi import FastAPI, HTTPException",
+      "from pydantic import BaseModel",
+      "",
+      "app = FastAPI()",
+      "",
+      "",
+      "class ${1:ItemModel}(BaseModel):",
+      "    ${2:name}: str",
+      "    ${3:description}: str = None",
+      "",
+      "",
+      "@app.get('/${4:endpoint}')",
+      "async def ${5:read_items}():",
+      "    return {\"items\": []}",
+      "",
+      "",
+      "@app.post('/${6:endpoint}')",
+      "async def ${7:create_item}(${8:item}: ${9:ItemModel}):",
+      "    return ${10:item}",
+      "",
+      "",
+      "if __name__ == '__main__':",
+      "    import uvicorn",
+      "    uvicorn.run(app, host=\"0.0.0.0\", port=8000)"
+    ],
+    "description": "Cria um aplicativo FastAPI básico"
+  },
+
+  "Python Requests (ps-py-requests)": {
+    "prefix": "ps-py-requests",
+    "body": [
+      "import requests",
+      "",
+      "response = requests.${1:get}('${2:https://api.example.com}'${3:, params=${4:{\"param\": \"value\"}}})",
+      "",
+      "if response.status_code == 200:",
+      "    data = response.json()",
+      "    ${5:# processar dados}",
+      "else:",
+      "    print(f\"Erro: {response.status_code}\")"
+    ],
+    "description": "Cria um exemplo de uso da biblioteca requests para APIs"
+  }
+}
